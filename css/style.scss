@@ -1,0 +1,326 @@
+/*------------  
+portfolio_home
+------------*/
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+#hdr_main{
+    /*--top_hdr--*/
+    .top_hdr{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 50px;
+        background: #eee;
+    }
+    /*--bottom_hdr--*/
+    .bottom_hdr{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #eee;
+        /*--名前「KAIDZU KOUSUKE」--*/
+        h1{
+            a{
+                display: block;
+                color: #5851cb;
+                font-size: 18px;
+                font-weight: 600;
+                letter-spacing: .1em;
+            }
+        }
+    }
+    /*--left_hdr--*/
+    .left_hdr{
+        position: fixed;
+        top: 50px;
+        left: 0;
+        z-index: 10;
+        padding: 20px 0 90px 0;
+        height: calc(100vh - 100px);
+        max-width: 60px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        background: #eee;
+        /*-- 　ハンバーガーメニュー --*/
+        .hum_btn{
+            padding: 13px;
+            width: 50px;
+            height: 50px;
+            .in{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: .8s;
+                &:hover{
+                    transform: rotate(180deg);
+                    div{
+                        border-radius: 50%;
+                        transform: scale(1.2);
+                        background:#decefd;
+                    }
+                }
+                div{
+                    position: absolute;
+                    margin: auto;
+                    width: 20%;
+                    height: 5px;
+                    background: #5851cb;
+                    transition: .5s;
+                    &:nth-of-type(1){
+                        top: 0;
+                        left: 0;
+                    }
+                    &:nth-of-type(2){
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                    }
+                    &:nth-of-type(3){
+                        top: 0;
+                        right: 0;
+                    }
+                    &:nth-of-type(4){
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                    }
+                    &:nth-of-type(5){
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                    }
+                    &:nth-of-type(6){
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                    }
+                    &:nth-of-type(7){
+                        bottom: 0;
+                        left: 0;
+                    }
+                    &:nth-of-type(8){
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                    }
+                    &:nth-of-type(9){
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+            }
+            
+        }
+        nav{
+            width: 100%;
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px 0;
+                li{
+                    width: 100%;
+                    a{
+                        display: flex;
+                        justify-content: center;
+                        &:hover{
+                            i{
+                                transform: scale(1.1);
+                                transform: translateY(-5px);
+                                color: #decefd;
+                            }
+                        }
+                        i{
+                            font-size: 1.5em;
+                            color: #5851cb;
+                            transition: .5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*--right_hdr--*/
+    .right_hdr{
+        position: fixed;
+        top: 50px;
+        right: 0;
+        z-index: 10;
+        max-width: 60px;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            margin-bottom: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #5851cb;
+            transform: rotate(90deg);
+        }
+        /*--スクロールダウン--*/
+        .scrolldown{
+            position:absolute;
+            bottom: 10px;
+            /*全体の高さ*/
+            height: 50px;
+            /*Scrollテキストの描写*/
+            span{
+                /*描画位置*/
+                position: absolute;
+                left:-15px;
+                top: -15px;
+                /*テキストの形状*/
+                color: #5851cb;
+                font-size: 0.7rem;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+            }
+            /* 線の描写 */
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 1px;
+                height: 30px;
+                background: #5851cb;
+                /*線の動き1.4秒かけて動く。永遠にループ*/
+                animation: pathmove 1.4s ease-in-out infinite;
+                opacity: 0;
+            }
+        }
+        /*高さ・位置・透過が変化して線が上から下に動く*/
+        @keyframes pathmove{
+            0%{
+                height: 0;
+                top: 0;
+                opacity: 0;
+            }
+            30%{
+                height: 30px;
+                opacity: 1;
+            }
+            100%{
+                height: 0;
+                top: 50px;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+#portfolio_main{
+    width: 100%;
+    margin: 0 auto;
+    .top_view{
+        position: sticky;
+        top: 50px;/*header高さ分で止まるようにする*/
+        padding: 0 60px;/*画面の高さを持たすための上下余白*/
+        width: 100%;
+        figure{
+            position: relative;
+            width: 100%;
+            height: 100vh;/*あとで100vhに変更*/
+            overflow: hidden;
+            &::before{
+                padding-top: 100%;
+                content: "";
+                display: block;
+            }
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .cont{
+        position: sticky;
+        top: 50px;
+        background: red;
+        .cont_concept{
+            position: sticky;
+            top: 50px;
+            margin: 0 auto;
+            padding: 50px 80px 400px 80px;
+            max-width: 1380px;
+            width: 100%;
+            background: #fff;
+            section{
+                display: flex;
+                // align-items: center;
+                justify-content: center;
+                gap: 0 40px;
+                .concept_ttl{
+                    width: 40%;
+                    h1{
+                        margin-bottom: 20px;
+                        width: 100%;
+                        font-size: 120px;
+                        font-weight: 600;
+                    }
+                    h2{
+                        width: 100%;
+                        font-size: 24px;
+                        font-weight: 600;
+                    }
+                }
+                .concept_img{
+                    width: 40%;
+                    figure{
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        &::before{
+                            padding-top: 100%;
+                            content: "";
+                            display: block;
+                        }
+                        img{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cont1{
+        position: sticky;
+        top: 50px;/*Header高さ分で止まるようにする*/
+        padding: 500px 60px;/*デモ画面の高さを持たすための上下余白*/
+        background: #cefdfd;
+        &:nth-of-type(2n){
+            background: green;
+        }
+        &:last-of-type{
+            padding-top: 60px;
+        }
+    }
+}
+
