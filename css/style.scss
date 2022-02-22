@@ -14,7 +14,7 @@ body{
         z-index: 10;
         width: 100%;
         height: 50px;
-        background: #eee;
+        // background: #eee;
     }
     /*--bottom_hdr--*/
     .bottom_hdr{
@@ -27,7 +27,7 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #eee;
+        // background: #eee;
         /*--名前「KAIDZU KOUSUKE」--*/
         h1{
             a{
@@ -53,7 +53,7 @@ body{
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
-        background: #eee;
+        // background: #eee;
         /*-- 　ハンバーガーメニュー --*/
         .hum_btn{
             padding: 13px;
@@ -163,12 +163,12 @@ body{
         max-width: 60px;
         width: 100%;
         height: calc(100vh - 100px);
-        background: #eee;
+        // background: #eee;
         display: flex;
         align-items: center;
         justify-content: center;
         p{
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             font-size: 24px;
             font-weight: 600;
             color: #5851cb;
@@ -224,14 +224,74 @@ body{
         }
     }
 }
+.hum_menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    &::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        z-index: 1;
+        background: #000;
+        opacity: .6;
+        width: 100%;
+        height: 100vh;
+    }
+    ul{
+        margin: 0 auto;
+        max-width: 1000px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li{
+            a{
+                position: relative;
+                z-index: 999;
+                display: block;
+                padding: 60px 40px;
+                height: 100%;
+                color: #fff;
+                transition: .5s;
+                background: red;
+                :hover{
+                    &::before{
+                        display: none;
+                    }
+                }
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    width: 100px;
+                    height: 1px;
+                    content: "";
+                    display: block;
+                    background: #FFF;
+                }
+            }
+        }
+    }
+}
 
 #portfolio_main{
     width: 100%;
     margin: 0 auto;
     .top_view{
         position: sticky;
-        top: 50px;/*header高さ分で止まるようにする*/
-        padding: 0 60px;/*画面の高さを持たすための上下余白*/
+        // top: 50px;/*header高さ分で止まるようにする*/
+        // padding: 0 60px;/*画面の高さを持たすための上下余白*/
         width: 100%;
         figure{
             position: relative;
@@ -249,7 +309,7 @@ body{
                 left: 0;
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain;
             }
         }
     }
