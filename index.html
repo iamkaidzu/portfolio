@@ -44,8 +44,8 @@
             <nav>
                 <ul>
                     <li><a href="https://www.instagram.com/kaichan.jpn/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter" target="_blank" rel="noopener noreferrer"></i></a></li>
-                    <li><a href="#"><i class="fab fa-github" target="_blank" rel="noopener noreferrer"></i></a></li>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/iamkaidzu" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -55,13 +55,13 @@
             <div class="scrolldown"><span>Scroll</span></div>
         </div>
     </header>
-    <nav class="hum_menu">
+    <nav class="hum_nav">
         <ul>
-            <li><a href="">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="">Concept</a></li>
             <li><a href="">Profile</a></li>
             <li><a href="">Skill</a></li>
-            <li><a href="">Works</a></li>
+            <li><a href="https://github.com/iamkaidzu">Works</a></li>
         </ul>
     </nav>
 
@@ -70,7 +70,7 @@
     -------------------------------------->
     <main id="portfolio_main">
         <article class="top_view">
-            <figure><img src="./img/img_001.JPG" alt="#"></figure>
+            <figure><img src="./img/img_002.JPG" alt="#"></figure>
         </article>
         <div class="cont">
             <article class="cont_concept">
@@ -113,6 +113,31 @@
     <script>
         'use strict'
         {
+            let $hum_btn = document.querySelector('.hum_btn')
+            let $hum_btn_div = document.querySelectorAll('.hum_btn .in div')
+            let $hum_nav = document.querySelector('.hum_nav')
+            let $background = document.querySelectorAll('.hum_nav ul li a')
+            $hum_btn.addEventListener('click' , () => {
+                $hum_btn.classList.toggle('on')
+                $hum_nav.classList.toggle('on')
+                for (let i = 0; i < $hum_btn_div.length; i++) {
+                    $hum_btn_div[i].classList.add('on')
+                }
+            })
+            $hum_nav.addEventListener('click', (e) => {
+                for (let i = 0; i < $background.length; i++) {
+                    if(e.target !== $background[i]) {
+                        $hum_btn.classList.remove('on')
+                        e.target.classList.remove('on')
+                        for (let a = 0; a < $hum_btn_div.length; a++) {
+                            $hum_btn_div[a].classList.remove('on')
+                        }
+                    } else {
+                        //何もしない
+                    }
+                }
+            })
+            
 
         }
     </script>
