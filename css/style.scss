@@ -32,10 +32,13 @@ body{
         h1{
             a{
                 display: block;
-                color: #5851cb;
+                color: #decffd;
                 font-size: 18px;
                 font-weight: 600;
                 letter-spacing: .1em;
+                &:hover{
+                    color: #decffd;
+                }
             }
         }
     }
@@ -80,7 +83,7 @@ body{
                     margin: auto;
                     width: 5px;
                     height: 5px;
-                    background: #5851cb;
+                    background: #decefd;
                     transition: .5s;
                     &:nth-of-type(1){
                         top: 0;
@@ -137,6 +140,7 @@ body{
                 gap: 30px 0;
                 li{
                     width: 100%;
+                    transition: .3s;
                     a{
                         display: flex;
                         justify-content: center;
@@ -144,12 +148,12 @@ body{
                             i{
                                 transform: scale(1.1);
                                 transform: translateY(-5px);
-                                color: #decefd;
+                                color: #f7e5ff;
                             }
                         }
                         i{
                             font-size: 1.5em;
-                            color: #5851cb;
+                            color: #decefd;
                             transition: .5s;
                         }
                     }
@@ -174,7 +178,7 @@ body{
             margin-bottom: 30px;
             font-size: 24px;
             font-weight: 600;
-            color: #5851cb;
+            color: #decffd;
             transform: rotate(90deg);
         }
         /*--スクロールダウン--*/
@@ -190,7 +194,7 @@ body{
                 left:-15px;
                 top: -15px;
                 /*テキストの形状*/
-                color: #5851cb;
+                color: #decefd;
                 font-size: 0.7rem;
                 font-weight: 600;
                 letter-spacing: 0.05em;
@@ -202,7 +206,7 @@ body{
                 top: 0;
                 width: 1px;
                 height: 30px;
-                background: #5851cb;
+                background: #decefd;
                 /*線の動き1.4秒かけて動く。永遠にループ*/
                 animation: pathmove 1.4s ease-in-out infinite;
                 opacity: 0;
@@ -301,8 +305,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 #portfolio_main{
     width: 100%;
     margin: 0 auto;
-    background: red;
-    .top_view{
+    .first_view{
         position: sticky;
         top: 0;/*header高さ分で止まるようにする*/
         // padding: 50px;/*画面の高さを持たすための上下余白*/
@@ -333,20 +336,20 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
     .cont{
         position: sticky;
         // top: 50px;
-        background: red;
-        // padding: 50px 50px 100vh 50px;
+        // background: red;
+        padding: 50px 60px 50px 60px;
         .cont_concept{
             // position: sticky;
             // top: 50px;
             margin: 0 auto;
-            padding: 50px 80px 400px 80px;
+            padding: 80px 80px 400px 80px;
             max-width: 1380px;
             width: 100%;
-            background: #fff;
+            background: #eee;
             section{
                 display: flex;
                 justify-content: center;
-                gap: 0 40px;
+                gap: 0 60px;
                 .concept_ttl{
                     width: 39%;
                     h1{
@@ -386,6 +389,318 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                 }
             }
         }
+        .cont_profile{
+            // position: sticky;
+            // top: 50px;
+            margin: 0 auto;
+            padding: 30px 100px;
+            max-width: 1380px;
+            width: 100%;
+            // height: 100vh;
+            // background: #eee;
+            // background: url("https://images.unsplash.com/photo-1614852206732-6728910dc175?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            // display: flex;
+            // align-items: center;
+            section{
+                margin: 0 auto;
+                padding: 50px 20px 60px 20px;
+                width: 100%;
+                // background: red;
+                // display: flex;
+                // flex-wrap: wrap;
+                // justify-content: center;
+                // align-items: center;
+                .profile_img{
+                    margin: 0 auto 0 auto;
+                    max-width: 700px;
+                    width: 100%;
+                    figure{
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        &::before{
+                            padding-top: 70%;
+                            content: "";
+                            display: block;
+                        }
+                        img{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .profile_txt{
+                    position: relative;
+                    margin: 0 auto;
+                    padding: 50px 20px 50px 50px;
+                    max-width: 700px;
+                    width: 100%;
+                    font-family: 'Open Sans', sans-serif;
+                    &::before{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        background: #000;
+                        opacity: .8;
+                    }
+                    h1{
+                        position: relative;
+                        margin: 0 0 30px 60px;
+                        width: 100%;
+                        font-size: 20px;
+                        color: #fff;
+                        &::before{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            margin: 0 60px 0 -60px;
+                            font-family: "Font Awesome 5 Free";
+                            content: "\f2bb";
+                            font-weight: 900;
+                            font-size: 20px;
+                            color: #fff;
+                            transition: .5s;
+                        }
+                    }
+                    p{
+                        position: relative;
+                        margin: 0 0 30px 60px;
+                        width: 100%;
+                        font-size: 20px;
+                        letter-spacing: .1em;
+                        line-height: 1.2em;
+                        color: #fff;
+                        &::before{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            margin: 0 54px 0 -53px;
+                            font-family: "Font Awesome 5 Free";
+                            content: "\f183";
+                            font-weight: 900;
+                            font-size: 20px;
+                            color: #fff;
+                            transition: .5s;
+                        }
+                        &:nth-of-type(2){
+                            &::before{
+                                margin: 4px 58px 0 -58px;
+                                content: "\f1fd";
+                            }
+                        }
+                        &:nth-of-type(3){
+                            &::before{
+                                margin: 0 60px 0 -60px;
+                                content: "\f015";
+                            }
+                        }
+                    }
+                    h2{
+                        position: relative;
+                        margin-left: 60px;
+                        max-width: 520px;
+                        width: 100%;
+                        color: #fff;
+                        font-size: 16px;
+                        letter-spacing: .1em;
+                        line-height: 1.5em;
+                        &::before{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            margin: 4px 58px 0 -58px;
+                            font-family: "Font Awesome 5 Free";
+                            content: "\f27a";
+                            font-weight: 900;
+                            font-size: 20px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        /*----------------------  
+        制作物 WOERKS
+        ----------------------*/
+        .cont_works{
+            margin: 0 auto;
+            padding: 50px 20px;
+            max-width: 1380px;
+            width: 100%;
+            background: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            section{
+                padding: 30px 20px;
+                max-width: 1260px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 20px 20px;
+                @media (max-width: 900px){
+                    padding: 20px;
+                    flex-wrap: wrap;
+                }
+                @media (max-width: 600px){
+                    gap: 10px 0;
+                }
+                .works_img{
+                    max-width: 470px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 40px;
+                    transition: .5s;
+                    @media (max-width: 900px){
+                        margin-bottom: 30px;
+                    }
+                    @media (max-width: 600px){
+                        margin-bottom: 10px;
+                    }
+                    &:hover{
+                        transform: translateY(-10px);
+                    }
+                    figure{
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        overflow: hidden;
+                        &::before{
+                            padding-top: 100%;
+                            content: "";
+                            display: block;
+                        }
+                        img{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .works_txt{
+                    padding: 0 40px;
+                    max-width: 420px;
+                    width: 100%;
+                    text-align: center;
+                    @media (max-width: 600px){
+                        padding: 0 10px;
+                    }
+                    .ttl{
+                        margin-bottom: 40px;
+                        width: 100%;
+                        h1{
+                            margin-bottom: 10px;
+                            font-size: 32px;
+                            font-weight: 600;
+                        }
+                        a{
+                            position: relative;
+                            margin-left: 24px;
+                            font-size: 14px;
+                            color: #000;
+                            border-bottom: 1px solid #111;
+                            transition: .3s;
+                            &:hover{
+                                color: #aaa;
+                                border-bottom: 1px solid #aaa;
+                            }
+                            &::before{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                margin: 3px 32px 0 -24px;
+                                font-size: 14px;
+                                font-family: "Font Awesome 5 Free";
+                                content: "\f038";
+                                font-weight: 900;
+                                transform: rotate(90deg);
+                            }
+                        }
+                    }
+                    .skill{
+                        margin: 0 auto 30px auto;
+                        max-width: 300px;
+                        width: 100%;
+                        h2{
+                            margin-bottom: 10px;
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                        p{
+                            width: 100%;
+                            font-size: 14px;
+                            letter-spacing: .1em;
+                            line-height: 1.2em;
+                        }
+                    }
+                    .ingenuity{
+                        margin: 0 auto 30px auto;
+                        max-width: 300px;
+                        h2{
+                            margin-bottom: 10px;
+                            width: 100%;
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                        p{
+                            position: relative;
+                            margin-left: 18px;
+                            width: 100%;
+                            font-size: 14px;
+                            letter-spacing: .1em;
+                            line-height: 1.2em;
+                            text-align: start;
+                            &::before{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                margin: 0 16px 0 -20px;
+                                font-family: "Font Awesome 5 Free";
+                                content: "\f00c";
+                                font-weight: 900;
+                                font-size: 12px;
+                                color: #000;
+                                transition: .5s;
+                            }
+                        }
+                    }
+                    .time_required{
+                        margin: 0 auto 30px auto;
+                        max-width: 300px;
+                        h2{
+                            margin-bottom: 10px;
+                            width: 100%;
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                        p{
+                            width: 100%;
+                            font-size: 14px;
+                            letter-spacing: .1em;
+                            line-height: 1.2em;
+                        }
+                    }
+                }
+            }
+        }
     }
     .cont1{
         position: sticky;
@@ -409,18 +724,18 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 .hum_btn.on{
     transform: rotate(90deg);
     .in{
+        transition: .3s;
+        &:hover{
+            transform: scale(1.1);
+        }
         div.on{
             &:nth-of-type(1n){
                 background: #decefd!important;
                 border-radius: 50%;
                 transform: scale(-70%)!important;
-                // transform: scale(1.2);
+                
             }
-            // &:nth-of-type(2n){
-            //     opacity: 0;
-            // }
             &:nth-of-type(2){
-                // background: red!important;
                 top: 20%!important;
                 left: 39%!important;
             }
@@ -429,12 +744,10 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                 left: 20%!important;
             }
             &:nth-of-type(6){
-                // background: blue!important;
                 top: 39%!important;
                 right: 20%!important;
             }
             &:nth-of-type(8){
-                // background: yellow!important;
                 bottom: 20%!important;
                 right: 39%!important;
             }
@@ -447,4 +760,13 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 .hum_nav.on{
     visibility: inherit;
     opacity: 1;
+}
+/*----------------------  
+クリックしたらのleft_hdrの動き
+----------------------*/
+.left_hdr.on{
+    background: none!important;
+    nav.on{
+        opacity: 0;
+    }
 }

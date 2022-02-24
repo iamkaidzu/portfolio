@@ -69,25 +69,83 @@
     コンテンツ
     -------------------------------------->
     <main id="portfolio_main">
-        <article class="top_view">
+        <article class="first_view">
             <figure><img src="./img/img_002.JPG" alt="#"></figure>
         </article>
         <div class="cont">
-            <article class="cont_concept">
+            <article class="cont_profile">
                 <section>
-                    <div class="concept_ttl">
-                        <h1>01</h1>
-                        <h2>丁寧でわかりやすいコーディングを</h2>
+                    <div class="profile_img">
+                        <figure><img src="./img/img_007.JPG" alt=""></figure>
                     </div>
-                    <div class="concept_img">
-                        <figure><img src="https://images.unsplash.com/photo-1579547944212-c4f4961a8dd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80" alt=""></figure>
+                    <div class="profile_txt">
+                        <h1>Kaidzu Kousuke (26)</h1>
+                        <p>Man</p>
+                        <p>1995 / 10 / 11</p>
+                        <p>Tokyo Akishima City</p>
+                        <h2>前職の経理部にてRPAを実装した経験から、プログラミングに興味を持ちました。<br>常に実践を意識したコーディングを心がけて勉強してきました。<br>改修などの際に見やすいよう余計なコードは書かずにクオリティの高い作品を作ることをモットーとしています。</h2>
+                    </div>
+                </section>
+            </article>
+            <!------------------------------------
+            制作物ページ
+            -------------------------------------->
+            <article class="cont_works">
+                <section>
+                    <a href="#" class="works_img">
+                        <figure><img src="./img/img_003.jpg" alt=""></figure>
+                        <figure><img src="./img/img_004.png" alt=""></figure>
+                    </a>
+                    <div class="works_txt">
+                        <div class="ttl">
+                            <h1>Web</h1>
+                            <a href="#">https://github.com/iamkaidzu</a>
+                        </div>
+                        <div class="skill">
+                            <h2>使用したスキル</h2>
+                            <p>HTML / CSS/ Javascript</p>
+                        </div>
+                        <div class="ingenuity">
+                            <h2>工夫した点</h2>
+                            <p>繰り返しの処理を効率良く記述すること</p>
+                            <p>改修しやすいよう、無駄なコードを書かないこと</p>
+                        </div>
+                        <div class="time_required">
+                            <h2>所用時間</h2>
+                            <p>4時間</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <a href="#" class="works_img">
+                        <figure><img src="./img/img_005.jpg" alt=""></figure>
+                        <figure><img src="./img/img_006.png" alt=""></figure>
+                    </a>
+                    <div class="works_txt">
+                        <div class="ttl">
+                            <h1>Web</h1>
+                            <a href="#">https://github.com/iamkaidzu</a>
+                        </div>
+                        <div class="skill">
+                            <h2>使用したスキル</h2>
+                            <p>HTML / CSS/ Javascript</p>
+                        </div>
+                        <div class="ingenuity">
+                            <h2>工夫した点</h2>
+                            <p>セクションごとに写真とテキストを入れ替えるレスポンシブデザイン</p>
+                            <p>改修しやすいよう、無駄なコードを書かないこと</p>
+                        </div>
+                        <div class="time_required">
+                            <h2>所用時間</h2>
+                            <p>4時間</p>
+                        </div>
                     </div>
                 </section>
             </article>
             <article class="cont_concept">
                 <section>
                     <div class="concept_ttl">
-                        <h1>02</h1>
+                        <h1>01</h1>
                         <h2>丁寧でわかりやすいコーディングを</h2>
                     </div>
                     <div class="concept_img">
@@ -116,10 +174,15 @@
             let $hum_btn = document.querySelector('.hum_btn')
             let $hum_btn_div = document.querySelectorAll('.hum_btn .in div')
             let $hum_nav = document.querySelector('.hum_nav')
+            let $left_hdr = document.querySelector('.left_hdr')
+            let $sns_nav = $left_hdr.querySelector('nav')
             let $background = document.querySelectorAll('.hum_nav ul li a')
+            
             $hum_btn.addEventListener('click' , () => {
                 $hum_btn.classList.toggle('on')
                 $hum_nav.classList.toggle('on')
+                $left_hdr.classList.toggle('on')
+                $sns_nav.classList.toggle('on')
                 for (let i = 0; i < $hum_btn_div.length; i++) {
                     $hum_btn_div[i].classList.add('on')
                 }
@@ -129,6 +192,8 @@
                     if(e.target !== $background[i]) {
                         $hum_btn.classList.remove('on')
                         e.target.classList.remove('on')
+                        $left_hdr.classList.remove('on')
+                        $sns_nav.classList.remove('on')
                         for (let a = 0; a < $hum_btn_div.length; a++) {
                             $hum_btn_div[a].classList.remove('on')
                         }
