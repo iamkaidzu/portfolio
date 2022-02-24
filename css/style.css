@@ -367,6 +367,9 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   position: sticky;
   padding: 50px 60px 50px 60px;
   /*----------------------  
+        スキル skill
+        ----------------------*/
+  /*----------------------  
         制作物 WOERKS
         ----------------------*/
 }
@@ -499,6 +502,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   margin: 0 0 30px 60px;
   width: 100%;
   font-size: 20px;
+  font-weight: 600;
   color: #fff;
 }
 
@@ -520,7 +524,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   margin: 0 0 30px 60px;
   width: 100%;
   font-size: 20px;
-  letter-spacing: .1em;
+  font-weight: 600;
   line-height: 1.2em;
   color: #fff;
 }
@@ -569,6 +573,152 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   font-weight: 900;
   font-size: 20px;
   color: #fff;
+}
+
+#portfolio_main .cont .cont_skill {
+  position: relative;
+  margin: 0 auto;
+  padding: 30px 110px;
+  max-width: 1380px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 1180px) {
+  #portfolio_main .cont .cont_skill {
+    padding: 30px 20px;
+  }
+}
+
+#portfolio_main .cont .cont_skill::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: .7;
+}
+
+#portfolio_main .cont .cont_skill section {
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 280px;
+  width: 100%;
+}
+
+@media (max-width: 1180px) {
+  #portfolio_main .cont .cont_skill section {
+    padding: 20px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 660px) {
+  #portfolio_main .cont .cont_skill section {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+}
+
+#portfolio_main .cont .cont_skill section .skill_img {
+  margin: 0 auto 20px auto;
+  padding: 0 40px;
+  width: 100%;
+}
+
+@media (max-width: 560px) {
+  #portfolio_main .cont .cont_skill section .skill_img {
+    padding: 0 20px;
+    margin-bottom: 10px;
+  }
+}
+
+#portfolio_main .cont .cont_skill section .skill_img figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#portfolio_main .cont .cont_skill section .skill_img figure::before {
+  padding-top: 100%;
+  content: "";
+  display: block;
+}
+
+#portfolio_main .cont .cont_skill section .skill_img figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#portfolio_main .cont .cont_skill section .skill_txt {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 200px;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 660px) {
+  #portfolio_main .cont .cont_skill section .skill_txt {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 560px) {
+  #portfolio_main .cont .cont_skill section .skill_txt {
+    padding: 10px 0;
+    max-width: 130px;
+  }
+}
+
+#portfolio_main .cont .cont_skill section .skill_txt::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  opacity: .8;
+}
+
+#portfolio_main .cont .cont_skill section .skill_txt h1 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+@media (max-width: 660px) {
+  #portfolio_main .cont .cont_skill section .skill_txt h1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  #portfolio_main .cont .cont_skill section .skill_txt h1 {
+    font-size: 14px;
+  }
 }
 
 #portfolio_main .cont .cont_works {
