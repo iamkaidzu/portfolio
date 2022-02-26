@@ -193,7 +193,7 @@ body {
   /*高さ・位置・透過が変化して線が上から下に動く*/
 }
 
-#hdr_main .right_hdr p {
+#hdr_main .right_hdr h1 {
   margin-bottom: 30px;
   font-size: 24px;
   font-weight: 600;
@@ -260,7 +260,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   top: 0;
   left: 0;
   z-index: 11;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -284,6 +284,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 
 .hum_nav ul {
   margin: 0 auto;
+  padding: 20px;
   max-width: 1000px;
   width: 100%;
   display: flex;
@@ -291,13 +292,28 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   justify-content: space-between;
 }
 
+@media (max-width: 660px) {
+  .hum_nav ul {
+    padding: 60px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 .hum_nav ul li a {
   position: relative;
   z-index: 2;
   display: block;
   padding: 60px 40px;
-  height: 100%;
+  text-align: center;
   color: #decefd;
+}
+
+@media (max-width: 660px) {
+  .hum_nav ul li a {
+    min-width: 480px;
+    width: 100%;
+  }
 }
 
 .hum_nav ul li a:hover {
@@ -331,14 +347,14 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   margin: 0 auto;
 }
 
-#portfolio_main .first_view {
+#portfolio_main #first_view {
   position: sticky;
   top: 0;
   /*header高さ分で止まるようにする*/
   width: 100%;
 }
 
-#portfolio_main .first_view figure {
+#portfolio_main #first_view figure {
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -348,13 +364,13 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   background: #000;
 }
 
-#portfolio_main .first_view figure::before {
+#portfolio_main #first_view figure::before {
   padding-top: 100%;
   content: "";
   display: block;
 }
 
-#portfolio_main .first_view figure img {
+#portfolio_main #first_view figure img {
   position: absolute;
   top: 0;
   left: 0;
@@ -366,6 +382,12 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 #portfolio_main .cont {
   position: sticky;
   padding: 50px 60px 50px 60px;
+  /*------------
+        concept
+        ------------*/
+  /*------------
+        profile
+        ------------*/
   /*----------------------  
         スキル skill
         ----------------------*/
@@ -374,56 +396,71 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
         ----------------------*/
 }
 
-#portfolio_main .cont .cont_concept {
-  margin: 0 auto;
-  padding: 80px 80px 400px 80px;
+#portfolio_main .cont #cont_concept {
+  margin: 0 auto 50px auto;
+  padding: 30px 20px;
   max-width: 1380px;
   width: 100%;
-  background: #eee;
+  background: #fff;
 }
 
-#portfolio_main .cont .cont_concept section {
+#portfolio_main .cont #cont_concept section {
+  margin: 0 auto 100px auto;
+  padding: 20px;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 0 60px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#portfolio_main .cont .cont_concept section .concept_ttl {
-  width: 39%;
+#portfolio_main .cont #cont_concept section .concept_txt {
+  width: 50%;
 }
 
-#portfolio_main .cont .cont_concept section .concept_ttl h1 {
-  margin-bottom: 20px;
+#portfolio_main .cont #cont_concept section .concept_txt .ttl {
   width: 100%;
-  font-size: 120px;
-  font-weight: 600;
 }
 
-#portfolio_main .cont .cont_concept section .concept_ttl h2 {
+#portfolio_main .cont #cont_concept section .concept_txt .ttl h1 {
+  font-size: 130px;
+  font-weight: bold;
+  line-height: .8em;
+}
+
+#portfolio_main .cont #cont_concept section .concept_txt .ttl h1 span {
+  display: block;
   width: 100%;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 32px;
 }
 
-#portfolio_main .cont .cont_concept section .concept_img {
-  width: 39%;
+#portfolio_main .cont #cont_concept section .concept_txt .txt {
+  padding: 20px 0;
 }
 
-#portfolio_main .cont .cont_concept section .concept_img figure {
+#portfolio_main .cont #cont_concept section .concept_txt .txt p {
+  font-size: 18px;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+  font-weight: bold;
+}
+
+#portfolio_main .cont #cont_concept section .concept_img {
+  width: 40%;
+}
+
+#portfolio_main .cont #cont_concept section .concept_img figure {
   position: relative;
   width: 100%;
-  height: auto;
-  border-radius: 50%;
-  overflow: hidden;
+  height: 100%;
 }
 
-#portfolio_main .cont .cont_concept section .concept_img figure::before {
+#portfolio_main .cont #cont_concept section .concept_img figure::before {
   padding-top: 100%;
   content: "";
   display: block;
 }
 
-#portfolio_main .cont .cont_concept section .concept_img figure img {
+#portfolio_main .cont #cont_concept section .concept_img figure img {
   position: absolute;
   top: 0;
   left: 0;
@@ -432,42 +469,39 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   object-fit: cover;
 }
 
-#portfolio_main .cont .cont_profile {
-  margin: 0 auto;
-  padding: 30px 100px;
+#portfolio_main .cont #cont_profile {
+  margin: 0 auto 10px auto;
+  padding: 30px 20px;
   max-width: 1380px;
   width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-#portfolio_main .cont .cont_profile section {
+#portfolio_main .cont #cont_profile section {
   margin: 0 auto;
-  padding: 50px 20px 60px 20px;
+  padding: 20px;
   width: 100%;
 }
 
-#portfolio_main .cont .cont_profile section .profile_img {
+#portfolio_main .cont #cont_profile section .profile_img {
   margin: 0 auto 0 auto;
   max-width: 700px;
   width: 100%;
 }
 
-#portfolio_main .cont .cont_profile section .profile_img figure {
+#portfolio_main .cont #cont_profile section .profile_img figure {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-#portfolio_main .cont .cont_profile section .profile_img figure::before {
+#portfolio_main .cont #cont_profile section .profile_img figure::before {
   padding-top: 70%;
   content: "";
   display: block;
 }
 
-#portfolio_main .cont .cont_profile section .profile_img figure img {
+#portfolio_main .cont #cont_profile section .profile_img figure img {
   position: absolute;
   top: 0;
   left: 0;
@@ -476,7 +510,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   object-fit: cover;
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt {
+#portfolio_main .cont #cont_profile section .profile_txt {
   position: relative;
   margin: 0 auto;
   padding: 50px 20px 50px 50px;
@@ -485,7 +519,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   font-family: 'Open Sans', sans-serif;
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt::before {
+#portfolio_main .cont #cont_profile section .profile_txt::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -497,7 +531,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   opacity: .8;
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt h1 {
+#portfolio_main .cont #cont_profile section .profile_txt h1 {
   position: relative;
   margin: 0 0 30px 60px;
   width: 100%;
@@ -506,7 +540,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   color: #fff;
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt h1::before {
+#portfolio_main .cont #cont_profile section .profile_txt h1::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -519,7 +553,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   transition: .5s;
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt p {
+#portfolio_main .cont #cont_profile section .profile_txt p {
   position: relative;
   margin: 0 0 30px 60px;
   width: 100%;
@@ -529,7 +563,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   color: #fff;
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt p::before {
+#portfolio_main .cont #cont_profile section .profile_txt p::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -542,17 +576,17 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   transition: .5s;
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt p:nth-of-type(2)::before {
+#portfolio_main .cont #cont_profile section .profile_txt p:nth-of-type(2)::before {
   margin: 4px 58px 0 -58px;
   content: "\f1fd";
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt p:nth-of-type(3)::before {
+#portfolio_main .cont #cont_profile section .profile_txt p:nth-of-type(3)::before {
   margin: 0 60px 0 -60px;
   content: "\f015";
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt h2 {
+#portfolio_main .cont #cont_profile section .profile_txt h2 {
   position: relative;
   margin-left: 60px;
   max-width: 520px;
@@ -563,7 +597,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   line-height: 1.5em;
 }
 
-#portfolio_main .cont .cont_profile section .profile_txt h2::before {
+#portfolio_main .cont #cont_profile section .profile_txt h2::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -575,10 +609,10 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   color: #fff;
 }
 
-#portfolio_main .cont .cont_skill {
+#portfolio_main .cont #cont_skill {
   position: relative;
-  margin: 0 auto;
-  padding: 30px 110px;
+  margin: 0 auto 70px auto;
+  padding: 20px 110px;
   max-width: 1380px;
   width: 100%;
   display: flex;
@@ -588,12 +622,12 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 @media (max-width: 1180px) {
-  #portfolio_main .cont .cont_skill {
+  #portfolio_main .cont #cont_skill {
     padding: 30px 20px;
   }
 }
 
-#portfolio_main .cont .cont_skill::before {
+#portfolio_main .cont #cont_skill::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -606,7 +640,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   opacity: .7;
 }
 
-#portfolio_main .cont .cont_skill section {
+#portfolio_main .cont #cont_skill section {
   margin: 0 auto;
   padding: 30px;
   max-width: 280px;
@@ -614,46 +648,46 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 @media (max-width: 1180px) {
-  #portfolio_main .cont .cont_skill section {
+  #portfolio_main .cont #cont_skill section {
     padding: 20px;
     max-width: 250px;
   }
 }
 
 @media (max-width: 660px) {
-  #portfolio_main .cont .cont_skill section {
+  #portfolio_main .cont #cont_skill section {
     max-width: 200px;
     margin-bottom: 20px;
   }
 }
 
-#portfolio_main .cont .cont_skill section .skill_img {
+#portfolio_main .cont #cont_skill section .skill_img {
   margin: 0 auto 20px auto;
   padding: 0 40px;
   width: 100%;
 }
 
 @media (max-width: 560px) {
-  #portfolio_main .cont .cont_skill section .skill_img {
+  #portfolio_main .cont #cont_skill section .skill_img {
     padding: 0 20px;
     margin-bottom: 10px;
   }
 }
 
-#portfolio_main .cont .cont_skill section .skill_img figure {
+#portfolio_main .cont #cont_skill section .skill_img figure {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-#portfolio_main .cont .cont_skill section .skill_img figure::before {
+#portfolio_main .cont #cont_skill section .skill_img figure::before {
   padding-top: 100%;
   content: "";
   display: block;
 }
 
-#portfolio_main .cont .cont_skill section .skill_img figure img {
+#portfolio_main .cont #cont_skill section .skill_img figure img {
   position: absolute;
   top: 0;
   left: 0;
@@ -662,7 +696,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   object-fit: contain;
 }
 
-#portfolio_main .cont .cont_skill section .skill_txt {
+#portfolio_main .cont #cont_skill section .skill_txt {
   position: relative;
   z-index: 2;
   margin: 0 auto;
@@ -673,19 +707,19 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 @media (max-width: 660px) {
-  #portfolio_main .cont .cont_skill section .skill_txt {
+  #portfolio_main .cont #cont_skill section .skill_txt {
     max-width: 150px;
   }
 }
 
 @media (max-width: 560px) {
-  #portfolio_main .cont .cont_skill section .skill_txt {
+  #portfolio_main .cont #cont_skill section .skill_txt {
     padding: 10px 0;
     max-width: 130px;
   }
 }
 
-#portfolio_main .cont .cont_skill section .skill_txt::before {
+#portfolio_main .cont #cont_skill section .skill_txt::before {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -694,11 +728,11 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   display: block;
   width: 100%;
   height: 100%;
-  background: #333;
+  background: #000;
   opacity: .8;
 }
 
-#portfolio_main .cont .cont_skill section .skill_txt h1 {
+#portfolio_main .cont #cont_skill section .skill_txt h1 {
   position: relative;
   z-index: 2;
   text-align: center;
@@ -710,20 +744,22 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 @media (max-width: 660px) {
-  #portfolio_main .cont .cont_skill section .skill_txt h1 {
+  #portfolio_main .cont #cont_skill section .skill_txt h1 {
     font-size: 16px;
   }
 }
 
 @media (max-width: 560px) {
-  #portfolio_main .cont .cont_skill section .skill_txt h1 {
+  #portfolio_main .cont #cont_skill section .skill_txt h1 {
     font-size: 14px;
   }
 }
 
-#portfolio_main .cont .cont_works {
+#portfolio_main .cont #cont_works {
+  position: relative;
+  z-index: 2;
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 30px 20px;
   max-width: 1380px;
   width: 100%;
   background: #fff;
@@ -733,7 +769,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   gap: 10px;
 }
 
-#portfolio_main .cont .cont_works section {
+#portfolio_main .cont #cont_works section {
   padding: 30px 20px;
   max-width: 1260px;
   width: 100%;
@@ -743,19 +779,19 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 @media (max-width: 900px) {
-  #portfolio_main .cont .cont_works section {
+  #portfolio_main .cont #cont_works section {
     padding: 20px;
     flex-wrap: wrap;
   }
 }
 
 @media (max-width: 600px) {
-  #portfolio_main .cont .cont_works section {
+  #portfolio_main .cont #cont_works section {
     gap: 10px 0;
   }
 }
 
-#portfolio_main .cont .cont_works section .works_img {
+#portfolio_main .cont #cont_works section .works_img {
   max-width: 470px;
   width: 100%;
   display: flex;
@@ -766,35 +802,35 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 @media (max-width: 900px) {
-  #portfolio_main .cont .cont_works section .works_img {
+  #portfolio_main .cont #cont_works section .works_img {
     margin-bottom: 30px;
   }
 }
 
 @media (max-width: 600px) {
-  #portfolio_main .cont .cont_works section .works_img {
+  #portfolio_main .cont #cont_works section .works_img {
     margin-bottom: 10px;
   }
 }
 
-#portfolio_main .cont .cont_works section .works_img:hover {
+#portfolio_main .cont #cont_works section .works_img:hover {
   transform: translateY(-10px);
 }
 
-#portfolio_main .cont .cont_works section .works_img figure {
+#portfolio_main .cont #cont_works section .works_img figure {
   position: relative;
   width: 100%;
   height: auto;
   overflow: hidden;
 }
 
-#portfolio_main .cont .cont_works section .works_img figure::before {
+#portfolio_main .cont #cont_works section .works_img figure::before {
   padding-top: 100%;
   content: "";
   display: block;
 }
 
-#portfolio_main .cont .cont_works section .works_img figure img {
+#portfolio_main .cont #cont_works section .works_img figure img {
   position: absolute;
   top: 0;
   left: 0;
@@ -803,7 +839,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   object-fit: cover;
 }
 
-#portfolio_main .cont .cont_works section .works_txt {
+#portfolio_main .cont #cont_works section .works_txt {
   padding: 0 40px;
   max-width: 420px;
   width: 100%;
@@ -811,23 +847,23 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 @media (max-width: 600px) {
-  #portfolio_main .cont .cont_works section .works_txt {
+  #portfolio_main .cont #cont_works section .works_txt {
     padding: 0 10px;
   }
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ttl {
+#portfolio_main .cont #cont_works section .works_txt .ttl {
   margin-bottom: 40px;
   width: 100%;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ttl h1 {
+#portfolio_main .cont #cont_works section .works_txt .ttl h1 {
   margin-bottom: 10px;
   font-size: 32px;
   font-weight: 600;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ttl a {
+#portfolio_main .cont #cont_works section .works_txt .ttl a {
   position: relative;
   margin-left: 24px;
   font-size: 14px;
@@ -836,12 +872,12 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   transition: .3s;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ttl a:hover {
+#portfolio_main .cont #cont_works section .works_txt .ttl a:hover {
   color: #aaa;
   border-bottom: 1px solid #aaa;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ttl a::before {
+#portfolio_main .cont #cont_works section .works_txt .ttl a::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -853,38 +889,38 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   transform: rotate(90deg);
 }
 
-#portfolio_main .cont .cont_works section .works_txt .skill {
+#portfolio_main .cont #cont_works section .works_txt .skill {
   margin: 0 auto 30px auto;
   max-width: 300px;
   width: 100%;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .skill h2 {
+#portfolio_main .cont #cont_works section .works_txt .skill h2 {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: 600;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .skill p {
+#portfolio_main .cont #cont_works section .works_txt .skill p {
   width: 100%;
   font-size: 14px;
   letter-spacing: .1em;
   line-height: 1.2em;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ingenuity {
+#portfolio_main .cont #cont_works section .works_txt .ingenuity {
   margin: 0 auto 30px auto;
   max-width: 300px;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ingenuity h2 {
+#portfolio_main .cont #cont_works section .works_txt .ingenuity h2 {
   margin-bottom: 10px;
   width: 100%;
   font-size: 18px;
   font-weight: 600;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ingenuity p {
+#portfolio_main .cont #cont_works section .works_txt .ingenuity p {
   position: relative;
   margin-left: 18px;
   width: 100%;
@@ -894,7 +930,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   text-align: start;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .ingenuity p::before {
+#portfolio_main .cont #cont_works section .works_txt .ingenuity p::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -907,19 +943,19 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   transition: .5s;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .time_required {
+#portfolio_main .cont #cont_works section .works_txt .time_required {
   margin: 0 auto 30px auto;
   max-width: 300px;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .time_required h2 {
+#portfolio_main .cont #cont_works section .works_txt .time_required h2 {
   margin-bottom: 10px;
   width: 100%;
   font-size: 18px;
   font-weight: 600;
 }
 
-#portfolio_main .cont .cont_works section .works_txt .time_required p {
+#portfolio_main .cont #cont_works section .works_txt .time_required p {
   width: 100%;
   font-size: 14px;
   letter-spacing: .1em;
@@ -933,6 +969,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   padding: 500px 60px;
   /*デモ画面の高さを持たすための上下余白*/
   background: #cefdfd;
+  opacity: .9;
 }
 
 #portfolio_main .cont1:nth-of-type(2n) {
