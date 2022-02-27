@@ -397,22 +397,31 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 #portfolio_main .cont #cont_profile {
-  margin: 0 auto 10px auto;
-  padding: 30px 20px;
+  margin: 0 auto 30px auto;
+  padding: 30px 0;
   max-width: 1380px;
   width: 100%;
+  height: 100vh;
+  transition: .3s;
 }
 
 #portfolio_main .cont #cont_profile section {
   margin: 0 auto;
-  padding: 20px;
+  max-width: 500px;
   width: 100%;
 }
 
 #portfolio_main .cont #cont_profile section .profile_img {
-  margin: 0 auto 0 auto;
-  max-width: 700px;
+  position: relative;
+  margin: 0 auto;
+  height: 550px;
   width: 100%;
+}
+
+@media (max-width: 450px) {
+  #portfolio_main .cont #cont_profile section .profile_img {
+    height: 350px;
+  }
 }
 
 #portfolio_main .cont #cont_profile section .profile_img figure {
@@ -423,7 +432,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
 }
 
 #portfolio_main .cont #cont_profile section .profile_img figure::before {
-  padding-top: 70%;
+  padding-top: 100%;
   content: "";
   display: block;
 }
@@ -437,103 +446,158 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   object-fit: cover;
 }
 
-#portfolio_main .cont #cont_profile section .profile_txt {
-  position: relative;
+#portfolio_main .cont #cont_profile section .profile_img h1 {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #decefd;
+  text-align: center;
+}
+
+#portfolio_main .cont #cont_profile section .profile_img .btn {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+}
+
+#portfolio_main .cont #cont_profile section .profile_img .btn i {
   margin: 0 auto;
-  padding: 50px 20px 50px 50px;
-  max-width: 700px;
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 20px;
+  color: #fff;
+  background: #decefd;
+  text-align: center;
+  transition: .3s;
+}
+
+#portfolio_main .cont #cont_profile section .profile_img .btn i:hover {
+  background: #fff;
+  color: #decefd;
+}
+
+#portfolio_main .cont #cont_profile section .profile_txt {
+  margin: 0 auto;
+  padding: 0 20px;
   width: 100%;
+  height: 0;
   font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  visibility: hidden;
+  overflow: hidden;
+  transition: .3s;
 }
 
-#portfolio_main .cont #cont_profile section .profile_txt::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  display: block;
+#portfolio_main .cont #cont_profile section .profile_txt dl {
+  margin: 0 auto;
+  padding: 10px 40px;
+  max-width: 500px;
   width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: .8;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-#portfolio_main .cont #cont_profile section .profile_txt h1 {
-  position: relative;
-  margin: 0 0 30px 60px;
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_profile section .profile_txt dl {
+    padding: 10px;
+  }
+}
+
+#portfolio_main .cont #cont_profile section .profile_txt dl dt {
+  width: 100px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_profile section .profile_txt dl dt {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  #portfolio_main .cont #cont_profile section .profile_txt dl dt {
+    width: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  #portfolio_main .cont #cont_profile section .profile_txt dl dt {
+    margin-bottom: 10px;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+#portfolio_main .cont #cont_profile section .profile_txt dl dd {
+  max-width: calc(100% - 100px);
   width: 100%;
   font-size: 20px;
-  font-weight: 600;
-  color: #fff;
 }
 
-#portfolio_main .cont #cont_profile section .profile_txt h1::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0 60px 0 -60px;
-  font-family: "Font Awesome 5 Free";
-  content: "\f2bb";
-  font-weight: 900;
-  font-size: 20px;
-  color: #fff;
-  transition: .5s;
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_profile section .profile_txt dl dd {
+    font-size: 16px;
+  }
 }
 
-#portfolio_main .cont #cont_profile section .profile_txt p {
-  position: relative;
-  margin: 0 0 30px 60px;
+@media (max-width: 450px) {
+  #portfolio_main .cont #cont_profile section .profile_txt dl dd {
+    max-width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 400px) {
+  #portfolio_main .cont #cont_profile section .profile_txt dl dd {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+#portfolio_main .cont #cont_profile section .profile_txt dl:last-of-type dt {
+  margin-bottom: 15px;
   width: 100%;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2em;
-  color: #fff;
 }
 
-#portfolio_main .cont #cont_profile section .profile_txt p::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0 54px 0 -53px;
-  font-family: "Font Awesome 5 Free";
-  content: "\f183";
-  font-weight: 900;
-  font-size: 20px;
-  color: #fff;
-  transition: .5s;
-}
-
-#portfolio_main .cont #cont_profile section .profile_txt p:nth-of-type(2)::before {
-  margin: 4px 58px 0 -58px;
-  content: "\f1fd";
-}
-
-#portfolio_main .cont #cont_profile section .profile_txt p:nth-of-type(3)::before {
-  margin: 0 60px 0 -60px;
-  content: "\f015";
-}
-
-#portfolio_main .cont #cont_profile section .profile_txt h2 {
-  position: relative;
-  margin-left: 60px;
-  max-width: 520px;
-  width: 100%;
-  color: #fff;
+#portfolio_main .cont #cont_profile section .profile_txt dl:last-of-type dd {
+  max-width: 100%;
   font-size: 16px;
   letter-spacing: .1em;
-  line-height: 1.5em;
+  line-height: 1.2em;
+  text-align: left;
 }
 
-#portfolio_main .cont #cont_profile section .profile_txt h2::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 4px 58px 0 -58px;
-  font-family: "Font Awesome 5 Free";
-  content: "\f27a";
-  font-weight: 900;
-  font-size: 20px;
-  color: #fff;
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_profile section .profile_txt dl:last-of-type dd {
+    font-size: 14px;
+  }
+}
+
+#portfolio_main .cont #cont_profile section i.on {
+  transform: rotate(90deg);
+}
+
+#portfolio_main .cont #cont_profile section .profile_txt.on {
+  padding: 50px 20px 30px 20px;
+  height: auto;
+  visibility: inherit;
+}
+
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_profile section .profile_txt.on {
+    padding: 30px 20px 20px 20px;
+  }
+}
+
+#portfolio_main .cont #cont_profile.on {
+  height: auto;
 }
 
 #portfolio_main .cont #cont_skill {

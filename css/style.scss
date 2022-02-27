@@ -351,25 +351,31 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
         profile
         ------------*/
         #cont_profile{
-            margin: 0 auto 10px auto ;
-            padding: 30px 20px;
+            margin: 0 auto 30px auto ;
+            padding: 30px 0;
             max-width: 1380px;
             width: 100%;
+            height: 100vh;
+            transition: .3s;
             section{
                 margin: 0 auto;
-                padding: 20px;
+                max-width: 500px;
                 width: 100%;
                 .profile_img{
-                    margin: 0 auto 0 auto;
-                    max-width: 700px;
+                    position: relative;
+                    margin: 0 auto;
+                    height: 550px;
                     width: 100%;
+                    @media (max-width: 450px){
+                        height: 350px;
+                    }
                     figure{
                         position: relative;
                         width: 100%;
                         height: 100%;
                         overflow: hidden;
                         &::before{
-                            padding-top: 70%;
+                            padding-top: 100%;
                             content: "";
                             display: block;
                         }
@@ -382,101 +388,124 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                             object-fit: cover;
                         }
                     }
+                    h1{
+                        position: absolute;
+                        bottom: 50px;
+                        left: 0;
+                        right: 0;
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #decefd;
+                        text-align: center;
+                    }
+                    .btn{
+                        position: absolute;
+                        bottom: -30px;
+                        left: 0;
+                        right: 0;
+                        z-index: 2;
+                        text-align: center;
+                        i{
+                            margin: 0 auto;
+                            border-radius: 50%;
+                            padding: 20px;
+                            font-size: 20px;
+                            color: #fff;
+                            background: #decefd;
+                            text-align: center;
+                            transition: .3s;
+                            &:hover{
+                                background: #fff;
+                                color: #decefd;
+                            }
+                        }
+                    }
                 }
                 .profile_txt{
-                    position: relative;
                     margin: 0 auto;
-                    padding: 50px 20px 50px 50px;
-                    max-width: 700px;
+                    padding: 0 20px;
                     width: 100%;
+                    height: 0;
                     font-family: 'Open Sans', sans-serif;
-                    &::before{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        content: "";
-                        display: block;
+                    background: #fff;
+                    visibility: hidden;
+                    overflow: hidden;
+                    transition: .3s;
+                    dl{
+                        margin: 0 auto;
+                        padding: 10px 40px;
+                        max-width: 500px;
                         width: 100%;
-                        height: 100%;
-                        background: #000;
-                        opacity: .8;
-                    }
-                    h1{
-                        position: relative;
-                        margin: 0 0 30px 60px;
-                        width: 100%;
-                        font-size: 20px;
-                        font-weight: 600;
-                        color: #fff;
-                        &::before{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            margin: 0 60px 0 -60px;
-                            font-family: "Font Awesome 5 Free";
-                            content: "\f2bb";
-                            font-weight: 900;
-                            font-size: 20px;
-                            color: #fff;
-                            transition: .5s;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
+                        @media (max-width: 600px){
+                            padding: 10px;
                         }
-                    }
-                    p{
-                        position: relative;
-                        margin: 0 0 30px 60px;
-                        width: 100%;
-                        font-size: 20px;
-                        font-weight: 600;
-                        line-height: 1.2em;
-                        color: #fff;
-                        &::before{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            margin: 0 54px 0 -53px;
-                            font-family: "Font Awesome 5 Free";
-                            content: "\f183";
-                            font-weight: 900;
-                            font-size: 20px;
-                            color: #fff;
-                            transition: .5s;
-                        }
-                        &:nth-of-type(2){
-                            &::before{
-                                margin: 4px 58px 0 -58px;
-                                content: "\f1fd";
+                        dt{
+                            width: 100px;
+                            font-weight: bold;
+                            @media (max-width: 600px){
+                                font-size: 14px;
+                            }
+                            @media (max-width: 450px){
+                                width: 80px;
+                            }
+                            @media (max-width: 400px){
+                                margin-bottom: 10px;
+                                max-width: 100%;
+                                text-align: center;
                             }
                         }
-                        &:nth-of-type(3){
-                            &::before{
-                                margin: 0 60px 0 -60px;
-                                content: "\f015";
+                        dd{
+                            max-width: calc(100% - 100px);
+                            width: 100%;
+                            font-size: 20px;
+                            @media (max-width: 600px){
+                                font-size: 16px;
+                            }
+                            @media (max-width: 450px){
+                                max-width: calc(100% - 80px);
+                            }
+                            @media (max-width: 400px){
+                                max-width: 100%;
+                                text-align: center;
+                            }
+                        }
+                        &:last-of-type{
+                            dt{
+                                margin-bottom: 15px;
+                                width: 100%;
+                            }
+                            dd{
+                                max-width: 100%;
+                                font-size: 16px;
+                                letter-spacing: .1em;
+                                line-height: 1.2em;
+                                text-align: left;
+                                @media (max-width: 600px){
+                                    font-size: 14px;
+                                }
                             }
                         }
                     }
-                    h2{
-                        position: relative;
-                        margin-left: 60px;
-                        max-width: 520px;
-                        width: 100%;
-                        color: #fff;
-                        font-size: 16px;
-                        letter-spacing: .1em;
-                        line-height: 1.5em;
-                        &::before{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            margin: 4px 58px 0 -58px;
-                            font-family: "Font Awesome 5 Free";
-                            content: "\f27a";
-                            font-weight: 900;
-                            font-size: 20px;
-                            color: #fff;
-                        }
+                }
+                i.on{
+                    transform: rotate(90deg);
+                }
+                .profile_txt.on{
+                    padding: 50px 20px 30px 20px;
+                    height: auto;
+                    visibility: inherit;
+                    @media (max-width: 600px){
+                        padding: 30px 20px 20px 20px;
                     }
                 }
             }
+        }
+        #cont_profile.on{
+            height: auto;
         }
         /*----------------------  
         スキル skill
