@@ -45,11 +45,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="https://www.instagram.com/kaichan.jpn/" target="_blank" rel="noopener noreferrer"><i
-                                class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.instagram.com/kaichan.jpn/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
                     <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://github.com/iamkaidzu" target="_blank" rel="noopener noreferrer"><i
-                                class="fab fa-github"></i></a></li>
+                    <li><a href="https://github.com/iamkaidzu" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -90,63 +88,7 @@
                         <p>Man</p>
                         <p>1995 / 10 / 11</p>
                         <p>Tokyo Akishima City</p>
-                        <h2>前職の経理部にてRPAを実装した経験から、プログラミングに興味を持ちました。<br>常に実践を意識したコーディングを心がけて勉強してきました。<br>改修などの際に見やすいよう余計なコードは書かずにクオリティの高い作品を作ることをモットーとしています。</h2>
-                    </div>
-                </section>
-            </article>
-            <!------------------------------------
-            コンセプトページ
-            -------------------------------------->
-            <article id="cont_concept">
-                <section>
-                    <div class="concept_txt">
-                        <div class="ttl">
-                            <h1>01<span>丁寧で見やすいコーディングを</span></h1>
-                        </div>
-                        <div class="txt">
-                            <p>
-                                無駄なコードを書かず、綺麗なコードを書くことを心がけています。<br>
-                                0からコーディングするときも、改修を行うことを前提に考えて必要最低限なコードを書くようにしています。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="concept_img">
-                        <figure><img src="https://images.unsplash.com/photo-1579547944212-c4f4961a8dd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80" alt=""></figure>
-                    </div>
-                </section>
-                <section>
-                    <div class="concept_img">
-                        <figure><img src="https://images.unsplash.com/photo-1579547944212-c4f4961a8dd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80" alt=""></figure>
-                    </div>
-                    <div class="concept_txt">
-                        <div class="ttl">
-                            <h1>02<span>HTMLを汚さない</span></h1>
-                        </div>
-                        <div class="txt">
-                            <p>
-                                HTMLに余計な要素を入れないようにしています。<br>
-                                ちょっとした修正などする際にHTMLはいじることがあると思います。<br>
-                                CSSの擬似要素等で代用できる部分はなるべくそれで補い、HTMLを汚さないようにしています。<br>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <div class="concept_txt">
-                        <div class="ttl">
-                            <h1>03<span>UIを意識したアニメーション</span></h1>
-                        </div>
-                        <div class="txt">
-                            <p>
-                                「使いやすいけれど面白い。」そんなページを目指してアニメーションを実装するようにしています。<br>
-                                レイアウトは提出されたデザインをいかに忠実に実装できるかが大事だと思います。<br>
-                                もちろんそれも高度な技術が必要ですが、その成果物に更なる"価値"を付与することがフロントエンジニアの指名と考えます。
-                                UIが求められる今の時代、アニメーションは武器になると思います。<br>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="concept_img">
-                        <figure><img src="https://images.unsplash.com/photo-1579547944212-c4f4961a8dd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80" alt=""></figure>
+                        <p>前職の経理部にてRPAを実装した経験から、プログラミングに興味を持ちました。<br>常に実践を意識したコーディングを心がけて勉強してきました。<br>改修などの際に見やすいよう余計なコードは書かずにクオリティの高い作品を作ることをモットーとしています。</p>
                     </div>
                 </section>
             </article>
@@ -155,15 +97,15 @@
             -------------------------------------->
             <article id="cont_skill"></article>
             <!------------------------------------
+            コンセプトページ
+            -------------------------------------->
+            <article id="cont_concept"></article>
+            <!------------------------------------
             制作物ページ
             -------------------------------------->
             <article id="cont_works"></article>
         </article>
-        <div class="cont1">
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        </div>
     </main>
-
 
     <script>
         'use strict'
@@ -210,16 +152,14 @@
                     $hum_nav.classList.remove('on')
                 })
             }
-
         }
         hum_nav()
         /*------------
         skill
         ------------*/
         function cont_skill() {
-            let $cont_skill = document.getElementById('cont_skill')
-
-            let items = [
+            const $cont_skill = document.getElementById('cont_skill')
+            const items = [
                 { "img": "./img/html-css.png", "ttl": "HTML / CSS" },
                 { "img": "./img/js.svg", "ttl": "Java Script" },
                 { "img": "./img/adobe-xd.svg", "ttl": "XD" },
@@ -227,8 +167,6 @@
                 { "img": "./img/jq.svg", "ttl": "JQuery" },
                 { "img": "./img/gsap-greensock.svg", "ttl": "GSAP" }
             ]
-
-
             for (let i = 0; i < items.length; i++) {
                 $cont_skill.innerHTML += `
                     <section>
@@ -243,17 +181,49 @@
             }
         }
         cont_skill()
+
         /*------------
-        skill
+        concept
+        ------------*/
+        function cont_concept() {
+            const $cont_concept = document.getElementById('cont_concept')
+            const items = [
+                {"num":"01", "ttl":"丁寧で見やすいコーディング", "txt_01":"無駄なコードを書かず、綺麗なコードを書くことを心がけています。","txt_02":"0からコーディングするときも、改修を行うことを前提に考えて必要最低限なコードを書くようにしています。","img":"https://images.unsplash.com/photo-1585157603881-3bfc18eb2ed1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=756&q=80"},
+                {"num":"02", "ttl":"HTMLを汚さない", "txt_01":"HTMLに余計な要素を入れないようにしています。","txt_02":"CSSの擬似要素等で代用できる部分はなるべくそれで補い、HTMLを汚さないようにしています。","img":"https://images.unsplash.com/photo-1585157603822-6ea06da9a49a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=784&q=80"},
+                {"num":"03", "ttl":"UIを意識したアニメーション", "txt_01":"「使いやすいけれど面白い。」そんなページを目指してアニメーションを実装します。","txt_02":"アニメーションを駆使してレイアウトに更なる「価値」を付与することがフロントエンドエンジニアの指名と考えます。","img":"https://images.unsplash.com/photo-1585157603606-0770fc544960?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"}
+            ]
+            for (let i = 0; i < items.length; i++) {
+                $cont_concept.innerHTML += `
+                <section>
+                    <div class="concept_txt">
+                        <div class="ttl">
+                            <h1>${items[i].num}<span>${items[i].ttl}</span></h1>
+                        </div>
+                        <div class="txt">
+                            <p>
+                                ${items[i].txt_01}<br>
+                                ${items[i].txt_02}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="concept_img">
+                        <figure><img src="${items[i].img}" alt=""></figure>
+                    </div>
+                </section>
+                `
+            }
+        }
+        cont_concept()
+
+        /*------------
+        works
         ------------*/
         function cont_works() {
-            let $cont_works = document.getElementById('cont_works')
-
-            let items = [
+            const $cont_works = document.getElementById('cont_works')
+            const items = [
                 { "img_pc": "./img/img_003.jpg", "img_sp": "./img/img_004.png", "ttl": "Web", "link": "https://github.com/iamkaidzu", "skill": "HTML / CSS/ GSAP", "ingenuty_01": "繰り返しの処理を効率良く記述すること", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "4" },
                 { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "https://github.com/iamkaidzu", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理を効率良く記述すること", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "4" }
             ]
-
             for (let i = 0; i < items.length; i++) {
                 $cont_works.innerHTML += `
                     <section>

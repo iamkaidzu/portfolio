@@ -383,90 +383,17 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   position: sticky;
   padding: 50px 60px 50px 60px;
   /*------------
-        concept
-        ------------*/
-  /*------------
         profile
         ------------*/
   /*----------------------  
         スキル skill
         ----------------------*/
+  /*------------
+        concept
+        ------------*/
   /*----------------------  
         制作物 WOERKS
         ----------------------*/
-}
-
-#portfolio_main .cont #cont_concept {
-  margin: 0 auto 50px auto;
-  padding: 30px 20px;
-  max-width: 1380px;
-  width: 100%;
-  background: #fff;
-}
-
-#portfolio_main .cont #cont_concept section {
-  margin: 0 auto 100px auto;
-  padding: 20px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#portfolio_main .cont #cont_concept section .concept_txt {
-  width: 50%;
-}
-
-#portfolio_main .cont #cont_concept section .concept_txt .ttl {
-  width: 100%;
-}
-
-#portfolio_main .cont #cont_concept section .concept_txt .ttl h1 {
-  font-size: 130px;
-  font-weight: bold;
-  line-height: .8em;
-}
-
-#portfolio_main .cont #cont_concept section .concept_txt .ttl h1 span {
-  display: block;
-  width: 100%;
-  font-size: 32px;
-}
-
-#portfolio_main .cont #cont_concept section .concept_txt .txt {
-  padding: 20px 0;
-}
-
-#portfolio_main .cont #cont_concept section .concept_txt .txt p {
-  font-size: 18px;
-  line-height: 1.5em;
-  letter-spacing: .1em;
-  font-weight: bold;
-}
-
-#portfolio_main .cont #cont_concept section .concept_img {
-  width: 40%;
-}
-
-#portfolio_main .cont #cont_concept section .concept_img figure {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-#portfolio_main .cont #cont_concept section .concept_img figure::before {
-  padding-top: 100%;
-  content: "";
-  display: block;
-}
-
-#portfolio_main .cont #cont_concept section .concept_img figure img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 #portfolio_main .cont #cont_profile {
@@ -753,6 +680,195 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   #portfolio_main .cont #cont_skill section .skill_txt h1 {
     font-size: 14px;
   }
+}
+
+#portfolio_main .cont #cont_concept {
+  margin: 0 auto 70px auto;
+  padding: 30px 20px;
+  max-width: 1380px;
+  width: 100%;
+  background: #fff;
+}
+
+@media (max-width: 480px) {
+  #portfolio_main .cont #cont_concept {
+    padding: 10px;
+  }
+}
+
+#portfolio_main .cont #cont_concept section {
+  margin: 0 auto 50px auto;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 970px) {
+  #portfolio_main .cont #cont_concept section {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 830px) {
+  #portfolio_main .cont #cont_concept section {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 540px) {
+  #portfolio_main .cont #cont_concept section {
+    padding: 20px 5px;
+  }
+}
+
+#portfolio_main .cont #cont_concept section:nth-of-type(2n) .concept_txt {
+  order: 2;
+}
+
+#portfolio_main .cont #cont_concept section:nth-of-type(2n) .concept_img {
+  order: 1;
+}
+
+#portfolio_main .cont #cont_concept section:last-of-type {
+  margin-bottom: 0;
+}
+
+#portfolio_main .cont #cont_concept section .concept_txt {
+  width: 55%;
+}
+
+@media (max-width: 830px) {
+  #portfolio_main .cont #cont_concept section .concept_txt {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
+#portfolio_main .cont #cont_concept section .concept_txt .ttl {
+  width: 100%;
+}
+
+#portfolio_main .cont #cont_concept section .concept_txt .ttl h1 {
+  font-size: 130px;
+  font-weight: bold;
+  line-height: .8em;
+}
+
+@media (max-width: 970px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .ttl h1 {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 540px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .ttl h1 {
+    font-size: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .ttl h1 {
+    font-size: 80px;
+  }
+}
+
+#portfolio_main .cont #cont_concept section .concept_txt .ttl h1 span {
+  display: block;
+  width: 100%;
+  font-size: 32px;
+}
+
+@media (max-width: 970px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .ttl h1 span {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 540px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .ttl h1 span {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .ttl h1 span {
+    font-size: 18px;
+  }
+}
+
+#portfolio_main .cont #cont_concept section .concept_txt .txt {
+  padding: 20px 0;
+}
+
+@media (max-width: 830px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .txt {
+    padding: 5px 0 20px 0;
+  }
+}
+
+@media (max-width: 830px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .txt {
+    padding: 0 0 0 0;
+  }
+}
+
+#portfolio_main .cont #cont_concept section .concept_txt .txt p {
+  font-size: 18px;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+  font-weight: bold;
+}
+
+@media (max-width: 970px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .txt p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 540px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .txt p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #portfolio_main .cont #cont_concept section .concept_txt .txt p {
+    font-weight: 300;
+  }
+}
+
+#portfolio_main .cont #cont_concept section .concept_img {
+  width: 40%;
+}
+
+@media (max-width: 830px) {
+  #portfolio_main .cont #cont_concept section .concept_img {
+    display: none;
+  }
+}
+
+#portfolio_main .cont #cont_concept section .concept_img figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#portfolio_main .cont #cont_concept section .concept_img figure::before {
+  padding-top: 100%;
+  content: "";
+  display: block;
+}
+
+#portfolio_main .cont #cont_concept section .concept_img figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #portfolio_main .cont #cont_works {
