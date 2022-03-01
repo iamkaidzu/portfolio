@@ -555,6 +555,13 @@ portforio_main
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_profile section .profile_img h1 {
+    bottom: 40px;
+    font-size: 20px;
+  }
+}
+
 #portfolio_main .cont #cont_profile section .profile_img .btn {
   position: absolute;
   bottom: -30px;
@@ -562,6 +569,12 @@ portforio_main
   right: 0;
   z-index: 2;
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_profile section .profile_img .btn {
+    bottom: -25px;
+  }
 }
 
 #portfolio_main .cont #cont_profile section .profile_img .btn i {
@@ -573,6 +586,12 @@ portforio_main
   background: #decefd;
   text-align: center;
   transition: .5s;
+}
+
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_profile section .profile_img .btn i {
+    padding: 15px;
+  }
 }
 
 #portfolio_main .cont #cont_profile section .profile_img .btn i:hover {

@@ -106,36 +106,6 @@
     <script>
         'use strict'
         /*------------
-        cont_profile
-        ------------*/
-        function cont_profile() {
-            const $cont_profile = document.getElementById('cont_profile')
-            const $btn = $cont_profile.querySelector('section .profile_img .btn i')
-            const $profile_txt = $cont_profile.querySelector('section .profile_txt')
-            const items = [
-                {"q":"Name","a":"Kaizdu Kousuke"},
-                {"q":"Age","a":"26"},
-                {"q":"Birth","a":"1995 / 10 /11"},
-                {"q":"Sex","a":"Man"},
-                {"q":"From","a":"Tokyo Akishima City"},
-                {"q":"Comment","a":"前職の経理部にてRPAを実装した経験から、プログラミングに興味を持ちました。<br>常に実践を意識したコーディングを心がけて勉強してきました。<br>改修などの際に見やすいよう余計なコードは書かずにクオリティの高い作品を作ることをモットーとしています。"},
-            ]
-            for (let i = 0; i < items.length; i++) {
-                $profile_txt.innerHTML +=`
-                    <dl>
-                        <dt>${items[i].q}</dt>
-                        <dd>${items[i].a}</dd>
-                    </dl>
-                `
-            }
-            $btn.addEventListener('click' , () => {
-                $cont_profile.classList.toggle('on')
-                $btn.classList.toggle('on')
-                $profile_txt.classList.toggle('on')
-            })
-        }
-        cont_profile()
-        /*------------
         hum_nav
         ------------*/
         function hum_nav() {
@@ -180,6 +150,36 @@
             }
         }
         hum_nav()
+        /*------------
+        profile
+        ------------*/
+        function cont_profile() {
+            const $cont_profile = document.getElementById('cont_profile')
+            const $btn = $cont_profile.querySelector('section .profile_img .btn i')
+            const $profile_txt = $cont_profile.querySelector('section .profile_txt')
+            const items = [
+                {"q":"Name","a":"Kaizdu Kousuke"},
+                {"q":"Age","a":"26"},
+                {"q":"Birth","a":"1995 / 10 /11"},
+                {"q":"Sex","a":"Man"},
+                {"q":"From","a":"Tokyo Akishima City"},
+                {"q":"Comment","a":"前職の経理部にてRPAを実装した経験から、プログラミングに興味を持ちました。<br>常に実践を意識したコーディングを心がけて勉強してきました。<br>改修などの際に見やすいよう余計なコードは書かずにクオリティの高い作品を作ることをモットーとしています。"},
+            ]
+            for (let i = 0; i < items.length; i++) {
+                $profile_txt.innerHTML +=`
+                    <dl>
+                        <dt>${items[i].q}</dt>
+                        <dd>${items[i].a}</dd>
+                    </dl>
+                `
+            }
+            $btn.addEventListener('click' , () => {
+                $cont_profile.classList.toggle('on')
+                $btn.classList.toggle('on')
+                $profile_txt.classList.toggle('on')
+            })
+        }
+        cont_profile()
         /*------------
         skill
         ------------*/
