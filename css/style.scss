@@ -15,6 +15,9 @@ body{
         width: 100%;
         height: 50px;
         // background: #fff;
+        @media (max-width: 500px){
+            height: 40px;
+        }
     }
     /*--bottom_hdr--*/
     .bottom_hdr{
@@ -27,6 +30,9 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 500px){
+            height: 40px;
+        }
         // background: #fff;
         /*--名前「KAIDZU KOUSUKE」--*/
         h1{
@@ -35,7 +41,10 @@ body{
                 color: #decffd;
                 font-size: 18px;
                 font-weight: 600;
-                letter-spacing: .1em;
+                letter-spacing: .2em;
+                @media (max-width: 500px){
+                    font-size: 16px;
+                }
                 &:hover{
                     color: #decffd;
                 }
@@ -49,14 +58,18 @@ body{
         left: 0;
         z-index: 12;
         padding: 20px 0 90px 0;
-        height: calc(100vh - 100px);
         max-width: 60px;
+        height: calc(100vh - 100px);
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
-        // background: #fff;
+        @media (max-width: 500px){
+            top: 40px;
+            max-width: 40px;
+            height: calc(100vh - 80px);
+        }
         /*-- 　ハンバーガーメニュー --*/
         .hum_btn{
             position: relative;
@@ -65,6 +78,11 @@ body{
             width: 60px;
             height: 60px;
             transition: .4s;
+            @media (max-width: 500px){
+                width: 40px;
+                height: 40px;
+                padding: 11px;
+            }
             &:hover{
                 .in{
                     div{
@@ -85,6 +103,10 @@ body{
                     height: 5px;
                     background: #decefd;
                     transition: .5s;
+                    @media (max-width: 500px){
+                        width: 3px;
+                        height: 3px;
+                    }
                     &:nth-of-type(1){
                         top: 0;
                         left: 0;
@@ -155,6 +177,9 @@ body{
                             font-size: 1.5em;
                             color: #decefd;
                             transition: .5s;
+                            @media (max-width: 500px){
+                                font-size: 1.2em;
+                            }
                         }
                     }
                 }
@@ -174,12 +199,20 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 500px){
+            top: 40px;
+            max-width: 40px;
+            height: calc(100vh - 80px);
+        }
         h1{
             margin-bottom: 30px;
             font-size: 24px;
             font-weight: 600;
             color: #decffd;
             transform: rotate(90deg);
+            @media (max-width: 500px){
+                font-size: 18px;
+            }
         }
         /*--スクロールダウン--*/
         .scrolldown{
@@ -187,6 +220,9 @@ body{
             bottom: 10px;
             /*全体の高さ*/
             height: 50px;
+            @media (max-width: 500px){
+                height: 40px;
+            }
             /*Scrollテキストの描写*/
             span{
                 /*描画位置*/
@@ -195,9 +231,13 @@ body{
                 top: -15px;
                 /*テキストの形状*/
                 color: #decefd;
-                font-size: 0.7rem;
+                font-size: .7rem;
                 font-weight: 600;
                 letter-spacing: 0.05em;
+                @media (max-width: 500px){
+                    left: -14px;
+                    font-size: .3rem;
+                }
             }
             /* 線の描写 */
             &::after{
@@ -278,11 +318,11 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                 z-index: 2;
                 display: block;
                 padding: 60px 40px;
-                // height: 100%;
                 text-align: center;
                 color: #decefd;
                 @media (max-width: 660px){
-                    min-width: 480px;
+                    padding: 30px 20px;
+                    min-width: 320px;
                     width: 100%;
                 }
                 &:hover{
@@ -312,21 +352,25 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
         }
     }
 }
-
+/*------------
+portforio_main
+------------*/
 #portfolio_main{
     width: 100%;
     margin: 0 auto;
+    /*------------
+    portforio_main
+    ------------*/
     #first_view{
         position: sticky;
         top: 0;/*header高さ分で止まるようにする*/
         // padding: 50px;/*画面の高さを持たすための上下余白*/
         width: 100%;
-        // background: #000;
         figure{
             position: relative;
             margin: 0 auto;
             width: 100%;
-            height: 100vh;/*あとで100vhに変更*/
+            height: 100vh;
             overflow: hidden;
             background: #000;
             &::before{
@@ -344,19 +388,28 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
             }
         }
     }
+    /*------------
+    コンテンツ
+    ------------*/
     .cont{
         position: sticky;
-        padding: 50px 60px 50px 60px;
+        padding: 50px 60px;
+        @media (max-width: 500px){
+            padding: 50px 40px;
+        }
         /*------------
         profile
         ------------*/
         #cont_profile{
-            margin: 0 auto 30px auto ;
+            margin: 0 auto 60px auto ;
             padding: 30px 0;
             max-width: 1380px;
             width: 100%;
-            height: 100vh;
-            transition: .3s;
+            height: auto;
+            transition: .6s;
+            @media (max-width: 450px){
+                margin-bottom: 30px;
+            }
             section{
                 margin: 0 auto;
                 max-width: 500px;
@@ -413,7 +466,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                             color: #fff;
                             background: #decefd;
                             text-align: center;
-                            transition: .3s;
+                            transition: .5s;
                             &:hover{
                                 background: #fff;
                                 color: #decefd;
@@ -430,7 +483,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                     background: #fff;
                     visibility: hidden;
                     overflow: hidden;
-                    transition: .3s;
+                    transition: .6s;
                     dl{
                         margin: 0 auto;
                         padding: 10px 40px;
@@ -491,21 +544,24 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                         }
                     }
                 }
-                i.on{
-                    transform: rotate(90deg);
-                }
-                .profile_txt.on{
-                    padding: 50px 20px 30px 20px;
-                    height: auto;
-                    visibility: inherit;
-                    @media (max-width: 600px){
-                        padding: 30px 20px 20px 20px;
-                    }
-                }
             }
         }
+        /*----------------------  
+        クリックしたらの#cont_profileの動き
+        ----------------------*/
         #cont_profile.on{
-            height: auto;
+            transform: translateY(-20px);
+                i.on{
+                    transform: rotate(45deg);
+                }
+            .profile_txt.on{
+                padding: 50px 20px 30px 20px;
+                height: auto;
+                visibility: inherit;
+                @media (max-width: 600px){
+                    padding: 30px 20px 20px 20px;
+                }
+            }
         }
         /*----------------------  
         スキル skill
@@ -754,13 +810,13 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
             }
         }
         /*----------------------  
-        制作物 WOERKS
+        WOERKS
         ----------------------*/
         #cont_works{
             position: relative;
             z-index: 2;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 30px 20px 0 20px;
             max-width: 1380px;
             width: 100%;
             background: #fff;
@@ -768,6 +824,9 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
             flex-wrap: wrap;
             align-items: center;
             gap: 10px;
+            @media (max-width: 600px){
+                padding: 30px 10px 0 10px;
+            }
             section{
                 padding: 30px 20px;
                 max-width: 1260px;
@@ -780,6 +839,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                     flex-wrap: wrap;
                 }
                 @media (max-width: 600px){
+                    padding: 10px;
                     gap: 10px 0;
                 }
                 .works_img{
@@ -828,12 +888,15 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                         padding: 0 10px;
                     }
                     .ttl{
-                        margin-bottom: 40px;
+                        margin-bottom: 42px;
                         width: 100%;
                         h1{
                             margin-bottom: 10px;
                             font-size: 32px;
                             font-weight: 600;
+                            @media (max-width: 600px){
+                                font-size: 26px;
+                            }
                         }
                         a{
                             position: relative;
@@ -842,6 +905,9 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                             color: #000;
                             border-bottom: 1px solid #111;
                             transition: .3s;
+                            @media (max-width: 600px){
+                                margin-left: 18px;
+                            }
                             &:hover{
                                 color: #aaa;
                                 border-bottom: 1px solid #aaa;
@@ -867,6 +933,9 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                             margin-bottom: 10px;
                             font-size: 18px;
                             font-weight: 600;
+                            @media (max-width: 600px){
+                                font-size: 16px;
+                            }
                         }
                         p{
                             width: 100%;
@@ -883,6 +952,9 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                             width: 100%;
                             font-size: 18px;
                             font-weight: 600;
+                            @media (max-width: 600px){
+                                font-size: 16px;
+                            }
                         }
                         p{
                             position: relative;
@@ -892,6 +964,9 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
                             letter-spacing: .1em;
                             line-height: 1.2em;
                             text-align: start;
+                            @media (max-width: 600px){
+                                margin-left: 10px;
+                            }
                             &::before{
                                 position: absolute;
                                 top: 0;
@@ -926,21 +1001,7 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
             }
         }
     }
-    .cont1{
-        position: sticky;
-        top: 50px;/*Header高さ分で止まるようにする*/
-        padding: 500px 60px;/*デモ画面の高さを持たすための上下余白*/
-        background: #cefdfd;
-        opacity: .9;
-        &:nth-of-type(2n){
-            background: green;
-        }
-        &:last-of-type{
-            padding-top: 60px;
-        }
-    }
 }
-
 
 //ここからアニメーション
 /*----------------------  
