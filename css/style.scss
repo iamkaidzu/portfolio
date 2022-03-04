@@ -14,7 +14,6 @@ body{
         z-index: 10;
         width: 100%;
         height: 50px;
-        // background: #fff;
         @media (max-width: 500px){
             height: 40px;
         }
@@ -33,7 +32,6 @@ body{
         @media (max-width: 500px){
             height: 40px;
         }
-        // background: #fff;
         /*--名前「KAIDZU KOUSUKE」--*/
         h1{
             a{
@@ -195,7 +193,6 @@ body{
         max-width: 60px;
         width: 100%;
         height: calc(100vh - 100px);
-        // background: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -235,8 +232,9 @@ body{
                 font-weight: 600;
                 letter-spacing: 0.05em;
                 @media (max-width: 500px){
-                    left: -14px;
-                    font-size: .3rem;
+                    display: block;
+                    text-align: center;
+                    font-size: .5rem;
                 }
             }
             /* 線の描写 */
@@ -361,7 +359,7 @@ portforio_main
     /*------------
     portforio_main
     ------------*/
-    #first_view{
+    #first_view_pc{
         position: sticky;
         top: 0;/*header高さ分で止まるようにする*/
         // padding: 50px;/*画面の高さを持たすための上下余白*/
@@ -1065,4 +1063,26 @@ portforio_main
     nav.on{
         opacity: 0;
     }
+}
+
+/*----------------------  
+fadeInを付与する
+----------------------*/
+.fadeIn{
+    opacity: 0!important;
+    transition: 1s;
+    transform: translateY(300px)!important;
+}
+.fadeIn.true{
+    opacity: 1!important;
+    transform: translateY(0)!important;
+}
+.fadeIn_img{
+    opacity: 0!important;
+    transition: 1s;
+    transform: translateY(400px)!important;
+}
+.fadeIn_img.true{
+    opacity: 1!important;
+    transform: translateY(0)!important;
 }

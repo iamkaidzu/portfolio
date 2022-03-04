@@ -291,8 +291,9 @@ body {
 
 @media (max-width: 500px) {
   #hdr_main .right_hdr .scrolldown span {
-    left: -14px;
-    font-size: .3rem;
+    display: block;
+    text-align: center;
+    font-size: .5rem;
   }
 }
 
@@ -431,14 +432,14 @@ portforio_main
     ------------*/
 }
 
-#portfolio_main #first_view {
+#portfolio_main #first_view_pc {
   position: sticky;
   top: 0;
   /*header高さ分で止まるようにする*/
   width: 100%;
 }
 
-#portfolio_main #first_view figure {
+#portfolio_main #first_view_pc figure {
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -447,13 +448,13 @@ portforio_main
   background: #000;
 }
 
-#portfolio_main #first_view figure::before {
+#portfolio_main #first_view_pc figure::before {
   padding-top: 100%;
   content: "";
   display: block;
 }
 
-#portfolio_main #first_view figure img {
+#portfolio_main #first_view_pc figure img {
   position: absolute;
   top: 0;
   left: 0;
@@ -1354,4 +1355,29 @@ portforio_main
 
 .left_hdr.on nav.on {
   opacity: 0;
+}
+
+/*----------------------  
+fadeInを付与する
+----------------------*/
+.fadeIn {
+  opacity: 0 !important;
+  transition: 1s;
+  transform: translateY(300px) !important;
+}
+
+.fadeIn.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fadeIn_img {
+  opacity: 0 !important;
+  transition: 1s;
+  transform: translateY(400px) !important;
+}
+
+.fadeIn_img.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
