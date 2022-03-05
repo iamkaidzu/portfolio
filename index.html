@@ -12,11 +12,15 @@
 </head>
 
 <body>
-
     <!------------------------------------
-    portfolio_home
+    ローディングアニメーション
     -------------------------------------->
-
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
     <!------------------------------------
     メインヘッダー
     -------------------------------------->
@@ -66,12 +70,15 @@
             <li><a href="#cont_works_target">Works</a></li>
         </ul>
     </nav>
-
     <!------------------------------------
     コンテンツ
     -------------------------------------->
     <main id="portfolio_main">
+        <!------------------------------------
+        ファーストビュー
+        -------------------------------------->
         <article id="first_view_pc">
+            <figure><img src="./img/img_001.JPG" alt="#"></figure>
             <figure><img src="./img/img_002.JPG" alt="#"></figure>
         </article>
         <article class="cont">
@@ -109,6 +116,18 @@
 
     <script>
         'use strict'
+        /*------------
+        loader
+        ------------*/
+        function loading() {
+            const $loader = document.getElementById('loader')
+            const $portfolio_main = document.getElementById('portfolio_main')
+            window.addEventListener('load', () => {
+                $loader.classList.add('on')
+                $portfolio_main.classList.add('on')
+            })
+        }
+        loading()
         /*------------
         hum_nav
         ------------*/
@@ -320,11 +339,6 @@
         Scroll_Anime('.fadeIn_img','true','300')
 
     </script>
-
-
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"></script> -->
-
 
 </body>
 
