@@ -20,7 +20,7 @@ hdr_main
 
 @media (max-width: 850px) {
   .hdr_main {
-    padding: 0 20px;
+    padding: 0 10px;
   }
 }
 
@@ -43,6 +43,12 @@ hdr_main
   color: #fff;
   font-weight: 600;
   font-size: 32px;
+}
+
+@media (max-width: 850px) {
+  .hdr_main h1 a {
+    font-size: 24px;
+  }
 }
 
 .hdr_main .pc_nav {
