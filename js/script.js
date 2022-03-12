@@ -15,7 +15,7 @@ loading()
 /*------------
 hum_nav
 ------------*/
-function hum_nav() {
+function hum_menu() {
   // 要素の取得
   const $hum_btn = document.querySelector('.hum_btn')
   const $hum_btn_div = document.querySelectorAll('.hum_btn .in div')
@@ -56,7 +56,7 @@ function hum_nav() {
     })
   }
 }
-hum_nav()
+hum_menu()
 /*------------
 profile
 ------------*/
