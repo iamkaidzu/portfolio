@@ -11,14 +11,14 @@ body{
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 999;
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  opacity: .2;
+  // opacity: .2;
   @media (max-width: 800px) {
     flex-wrap: wrap;
     .logo{
@@ -37,7 +37,7 @@ body{
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 1;
+        z-index: 998;
         content: "";
         display: block;
         width: 100%;
@@ -48,7 +48,7 @@ body{
     }
     a{
       position: relative;
-      z-index: 2;
+      z-index: 999;
       padding: 20px 5px;
       display: inline-block;
       color: #111;
@@ -171,7 +171,7 @@ body{
     position: fixed;
     top: 70px;
     right: 10px;
-    z-index: 4;
+    z-index: 999;
     padding: 15px 10px;
     width: 44px;
     height: 44px;
@@ -221,7 +221,7 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 998;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -234,7 +234,7 @@ body{
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 2;
+      z-index: 997;
       width: 100%;
       height: 100%;
       content: "";
@@ -244,7 +244,7 @@ body{
     }
     ul{
       position: relative;
-      z-index: 3;
+      z-index: 999;
       max-width: calc(100vw - 45%);
       width: 100%;
       height: 75vh;
@@ -299,12 +299,90 @@ body{
 #wrapper_main {
   margin: 0 auto;
   width: 100%;
+  /*------------  
+  FV
+  ------------*/
   #first_view{
     position: relative;
     top: 60px;
     width: 100vw;
     height: calc(100vh - 60px);
-    background: red;
+    @media (max-width: 800px) {
+      top: 124px;
+      height: calc(100vh - 124px);
+    }
+    @media (max-width: 450px) {
+      top: 110px;
+      height: calc(100vh - 110px);
+    }
+    h1{
+      position: relative;
+      position: absolute;
+      top: 56%;
+      left: 40px;
+      z-index: 2;
+      color: #fff;
+      font-size: 96px;
+      font-weight: 700;
+      letter-spacing: -.05em;
+      @media (max-width: 950px) {
+        top: 58%;
+        font-size: 82px;
+      }
+      @media (max-width: 850px) {
+        max-width: 100px;
+        width: 100%;
+        bottom: 0;
+      }
+      @media (max-width: 600px) {
+        left: 20px;
+      }
+    }
+    figure{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      &::before{
+        padding-top: 100%;
+        content: "";
+        display: block;
+      }
+      img{
+        position: absolute;
+        height: auto;
+        object-fit: cover;
+        &:nth-of-type(1){
+          top: 0;
+          left: 0;
+          width: 43%;
+          height: 72%;
+        }
+        &:nth-of-type(2){
+          top: 70%;
+          left: 0;
+          width: 50%;
+          @media (max-width: 800px) {
+            top: 72%;
+          }
+          @media (max-width: 500px) {
+            height: 30%;
+          }
+        }
+        &:nth-of-type(3){
+          top: 0;
+          left: 42%;
+          width: 35%;
+          height: 100%;
+        }
+        &:nth-of-type(4){
+          bottom: 0;
+          right: -22%;
+          width: 45%;
+          height: 100%;
+        }
+      }
+    }
   }
   /*------------  
   works_person
@@ -312,11 +390,11 @@ body{
   #works_person {
     margin: 80px auto 0 auto;
     width: 100%;
-    font-family: "Kosugi", sans-serif;
-    font-family: "Poppins", sans-serif;
+    // font-family: "Kosugi", sans-serif;
+    // font-family: "Poppins", sans-serif;
     .cont_person {
       margin: 0 auto;
-      padding:70px 20px;
+      padding: 70px 20px;
       max-width: 1300px;
       width: 100%;
       @media (max-width: 970px) {
