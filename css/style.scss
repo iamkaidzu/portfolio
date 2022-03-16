@@ -232,6 +232,41 @@ body {
         }
       }
     }
+    /*----------------------  
+    クリックしたらのhum_btnの動き
+    ----------------------*/
+    .hum_btn.on {
+      transform: rotate(90deg);
+      .in {
+        transition: 0.3s;
+        &:hover {
+          transform: scale(1.1);
+        }
+        div.on {
+          &:nth-of-type(1n) {
+            background: #decefd;
+            border-radius: 50%;
+            transform: scale(-70%);
+          }
+          &:nth-of-type(2) {
+            top: 20%;
+            left: 39%;
+          }
+          &:nth-of-type(4) {
+            bottom: 39%;
+            left: 20%;
+          }
+          &:nth-of-type(6) {
+            top: 39%;
+            right: 20%;
+          }
+          &:nth-of-type(8) {
+            bottom: 20%;
+            right: 39%;
+          }
+        }
+      }
+    }
     nav {
       width: 100%;
       ul {
@@ -441,6 +476,19 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
         }
       }
     }
+  }
+}
+/*----------------------  
+クリックしたらのhum_navの動き
+----------------------*/
+.hum_nav.on {
+  top: 0;
+  height: 100vh;
+  visibility: inherit;
+  opacity: 1;
+  @media (max-width: 769px) {
+    left: 0;
+    width: 100vw;
   }
 }
 /*------------
@@ -707,7 +755,7 @@ portforio_main
         opacity: 0.7;
       }
       section {
-        margin: 0 auto;
+        margin: 0 35px;
         padding: 30px;
         max-width: 280px;
         width: 100%;
@@ -833,6 +881,7 @@ portforio_main
           margin-bottom: 0;
         }
         .concept_txt {
+          // background: #fff;
           width: 55%;
           @media (max-width: 830px) {
             margin: 0 auto;
@@ -841,7 +890,6 @@ portforio_main
           }
           .ttl {
             width: 100%;
-            // background: red;
             h1 {
               font-size: 130px;
               font-weight: bold;
@@ -897,7 +945,6 @@ portforio_main
             }
           }
         }
-
         .concept_img {
           width: 40%;
           @media (max-width: 830px) {
@@ -925,7 +972,7 @@ portforio_main
       }
     }
     /*----------------------  
-    WOERKS
+    works
     ----------------------*/
     #cont_works {
       position: relative;
@@ -972,7 +1019,8 @@ portforio_main
             margin-bottom: 10px;
           }
           &:hover {
-            transform: translateY(-10px);
+            transform: translateY(-20px);
+            opacity: .6;
           }
           figure {
             position: relative;
@@ -993,6 +1041,10 @@ portforio_main
               object-fit: cover;
             }
           }
+        }
+        .works_img.on{
+          transform: translateY(-25px);
+          opacity: .6;
         }
         .works_txt {
           padding: 0 40px;
@@ -1023,9 +1075,12 @@ portforio_main
               @media (max-width: 600px) {
                 margin-left: 18px;
               }
+              @media (max-width: 430px) {
+                display: none;
+              }
               &:hover {
-                color: #aaa;
-                border-bottom: 1px solid #aaa;
+                color: #ccc;
+                border-bottom: 1px solid #ccc;
               }
               &::before {
                 position: absolute;
@@ -1121,65 +1176,7 @@ portforio_main
   opacity: 1;
 }
 
-//ここからアニメーション
-/*----------------------  
-クリックしたらのhum_btnの動き
-----------------------*/
-.hum_btn.on {
-  transform: rotate(90deg);
-  .in {
-    transition: 0.3s;
-    &:hover {
-      transform: scale(1.1);
-    }
-    div.on {
-      &:nth-of-type(1n) {
-        background: #decefd !important;
-        border-radius: 50%;
-        transform: scale(-70%) !important;
-      }
-      &:nth-of-type(2) {
-        top: 20% !important;
-        left: 39% !important;
-      }
-      &:nth-of-type(4) {
-        bottom: 39% !important;
-        left: 20% !important;
-      }
-      &:nth-of-type(6) {
-        top: 39% !important;
-        right: 20% !important;
-      }
-      &:nth-of-type(8) {
-        bottom: 20% !important;
-        right: 39% !important;
-      }
-    }
-  }
-}
-/*----------------------  
-クリックしたらのhum_navの動き
-----------------------*/
-.hum_nav.on {
-  top: 0;
-  height: 100vh;
-  visibility: inherit;
-  opacity: 1;
-  @media (max-width: 769px) {
-    left: 0;
-    width: 100vw;
-  }
-}
-/*----------------------  
-クリックしたらのleft_hdrの動き
-----------------------*/
-.left_hdr.on {
-  background: none !important;
-  nav.on {
-    opacity: 0;
-  }
-}
-
+//アニメーション
 /*----------------------  
 fadeInを付与する
 ----------------------*/

@@ -171,6 +171,9 @@ body {
   justify-content: center;
   align-items: flex-start;
   /*-- 　ハンバーガーメニュー --*/
+  /*----------------------  
+    クリックしたらのhum_btnの動き
+    ----------------------*/
 }
 
 @media (max-width: 500px) {
@@ -275,6 +278,44 @@ body {
 #hdr_main .left_hdr .hum_btn .in div:nth-of-type(9) {
   bottom: 0;
   right: 0;
+}
+
+#hdr_main .left_hdr .hum_btn.on {
+  transform: rotate(90deg);
+}
+
+#hdr_main .left_hdr .hum_btn.on .in {
+  transition: 0.3s;
+}
+
+#hdr_main .left_hdr .hum_btn.on .in:hover {
+  transform: scale(1.1);
+}
+
+#hdr_main .left_hdr .hum_btn.on .in div.on:nth-of-type(1n) {
+  background: #decefd;
+  border-radius: 50%;
+  transform: scale(-70%);
+}
+
+#hdr_main .left_hdr .hum_btn.on .in div.on:nth-of-type(2) {
+  top: 20%;
+  left: 39%;
+}
+
+#hdr_main .left_hdr .hum_btn.on .in div.on:nth-of-type(4) {
+  bottom: 39%;
+  left: 20%;
+}
+
+#hdr_main .left_hdr .hum_btn.on .in div.on:nth-of-type(6) {
+  top: 39%;
+  right: 20%;
+}
+
+#hdr_main .left_hdr .hum_btn.on .in div.on:nth-of-type(8) {
+  bottom: 20%;
+  right: 39%;
 }
 
 #hdr_main .left_hdr nav {
@@ -524,6 +565,23 @@ hum_btnをクリックしたら表示されるナビゲーションメニュー
   transition: 0.3s;
 }
 
+/*----------------------  
+クリックしたらのhum_navの動き
+----------------------*/
+.hum_nav.on {
+  top: 0;
+  height: 100vh;
+  visibility: inherit;
+  opacity: 1;
+}
+
+@media (max-width: 769px) {
+  .hum_nav.on {
+    left: 0;
+    width: 100vw;
+  }
+}
+
 /*------------
 portforio_main
 ------------*/
@@ -602,7 +660,7 @@ portforio_main
     concept
     ------------*/
   /*----------------------  
-    WOERKS
+    works
     ----------------------*/
 }
 
@@ -880,7 +938,7 @@ portforio_main
 }
 
 #portfolio_main .cont #cont_skill section {
-  margin: 0 auto;
+  margin: 0 35px;
   padding: 30px;
   max-width: 280px;
   width: 100%;
@@ -1249,7 +1307,8 @@ portforio_main
 }
 
 #portfolio_main .cont #cont_works section .works_img:hover {
-  transform: translateY(-10px);
+  transform: translateY(-20px);
+  opacity: .6;
 }
 
 #portfolio_main .cont #cont_works section .works_img figure {
@@ -1272,6 +1331,11 @@ portforio_main
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+#portfolio_main .cont #cont_works section .works_img.on {
+  transform: translateY(-25px);
+  opacity: .6;
 }
 
 #portfolio_main .cont #cont_works section .works_txt {
@@ -1319,9 +1383,15 @@ portforio_main
   }
 }
 
+@media (max-width: 430px) {
+  #portfolio_main .cont #cont_works section .works_txt .ttl a {
+    display: none;
+  }
+}
+
 #portfolio_main .cont #cont_works section .works_txt .ttl a:hover {
-  color: #aaa;
-  border-bottom: 1px solid #aaa;
+  color: #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 #portfolio_main .cont #cont_works section .works_txt .ttl a::before {
@@ -1429,75 +1499,6 @@ portforio_main
 
 #portfolio_main.on {
   opacity: 1;
-}
-
-/*----------------------  
-クリックしたらのhum_btnの動き
-----------------------*/
-.hum_btn.on {
-  transform: rotate(90deg);
-}
-
-.hum_btn.on .in {
-  transition: 0.3s;
-}
-
-.hum_btn.on .in:hover {
-  transform: scale(1.1);
-}
-
-.hum_btn.on .in div.on:nth-of-type(1n) {
-  background: #decefd !important;
-  border-radius: 50%;
-  transform: scale(-70%) !important;
-}
-
-.hum_btn.on .in div.on:nth-of-type(2) {
-  top: 20% !important;
-  left: 39% !important;
-}
-
-.hum_btn.on .in div.on:nth-of-type(4) {
-  bottom: 39% !important;
-  left: 20% !important;
-}
-
-.hum_btn.on .in div.on:nth-of-type(6) {
-  top: 39% !important;
-  right: 20% !important;
-}
-
-.hum_btn.on .in div.on:nth-of-type(8) {
-  bottom: 20% !important;
-  right: 39% !important;
-}
-
-/*----------------------  
-クリックしたらのhum_navの動き
-----------------------*/
-.hum_nav.on {
-  top: 0;
-  height: 100vh;
-  visibility: inherit;
-  opacity: 1;
-}
-
-@media (max-width: 769px) {
-  .hum_nav.on {
-    left: 0;
-    width: 100vw;
-  }
-}
-
-/*----------------------  
-クリックしたらのleft_hdrの動き
-----------------------*/
-.left_hdr.on {
-  background: none !important;
-}
-
-.left_hdr.on nav.on {
-  opacity: 0;
 }
 
 /*----------------------  

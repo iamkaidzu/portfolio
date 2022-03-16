@@ -20,15 +20,11 @@ function hum_menu() {
   const $hum_btn = document.querySelector('.hum_btn')
   const $hum_btn_div = document.querySelectorAll('.hum_btn .in div')
   const $hum_nav = document.querySelector('.hum_nav')
-  const $left_hdr = document.querySelector('.left_hdr')
-  const $sns_nav = $left_hdr.querySelector('nav')
   const $jump_link = document.querySelectorAll('.hum_nav ul li a')
   // hum_btnをクリックしたら
   $hum_btn.addEventListener('click', () => {
     $hum_btn.classList.toggle('on')
     $hum_nav.classList.toggle('on')
-    $left_hdr.classList.toggle('on')
-    $sns_nav.classList.toggle('on')
     for (let i = 0; i < $hum_btn_div.length; i++) {
       $hum_btn_div[i].classList.add('on')
     }
@@ -39,8 +35,6 @@ function hum_menu() {
       if (e.target !== $jump_link[i]) {
         $hum_btn.classList.remove('on')
         e.target.classList.remove('on')
-        $left_hdr.classList.remove('on')
-        $sns_nav.classList.remove('on')
         for (let a = 0; a < $hum_btn_div.length; a++) {
           $hum_btn_div[a].classList.remove('on')
         }
@@ -121,9 +115,9 @@ concept
 function cont_concept() {
   const $cont_concept = document.getElementById('cont_concept')
   const items = [
-    { "num": "01", "ttl": "丁寧で見やすいコーディング", "txt_01": "無駄なコードを書かず、綺麗なコードを書くことを心がけています。", "txt_02": "0からコーディングするときも、改修を行うことを前提に考えて必要最低限なコードを書くようにしています。", "img": "https://images.unsplash.com/photo-1585157603881-3bfc18eb2ed1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=756&q=80" },
-    { "num": "02", "ttl": "HTMLを汚さない", "txt_01": "HTMLに余計な要素を入れないようにしています。", "txt_02": "CSSの擬似要素等で代用できる部分はなるべくそれで補い、HTMLを汚さないようにしています。", "img": "https://images.unsplash.com/photo-1585157603822-6ea06da9a49a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=784&q=80" },
-    { "num": "03", "ttl": "UIを意識したアニメーション", "txt_01": "「使いやすいけれど面白い。」そんなページを目指してアニメーションを実装します。", "txt_02": "アニメーションを駆使してレイアウトに更なる「価値」を付与することがフロントエンドエンジニアの指名と考えます。", "img": "https://images.unsplash.com/photo-1585157603606-0770fc544960?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80" }
+    { "num": "01", "ttl": "丁寧で見やすいコーディング", "txt_01": "無駄なコードを書かず、綺麗なコードを書くことを心がけています。", "txt_02": "0からコーディングするときも、改修を行うことを前提に考えて必要最低限なコードを書くようにしています。", "img": "./img/img_001-01.JPG" },
+    { "num": "02", "ttl": "HTMLを汚さない", "txt_01": "HTMLに余計な要素を入れないようにしています。", "txt_02": "CSSの擬似要素等で代用できる部分はなるべくそれで補い、HTMLを汚さないようにしています。", "img": "./img/img_001-02.JPG" },
+    { "num": "03", "ttl": "UIを意識したアニメーション", "txt_01": "「使いやすいけれど面白い。」そんなページを目指してアニメーションを実装します。", "txt_02": "アニメーションを駆使してレイアウトに更なる「価値」を付与することがフロントエンドエンジニアの使命と考えます。", "img": "./img/img_001-03.JPG" }
   ]
   for (let i = 0; i < items.length; i++) {
     $cont_concept.innerHTML += `
@@ -154,20 +148,20 @@ works
 function cont_works() {
   const $cont_works = document.getElementById('cont_works')
   const items = [
-    { "img_pc": "./img/img_003.jpg", "img_sp": "./img/img_004.png", "ttl": "Web", "link": "https://github.com/iamkaidzu", "skill": "HTML / CSS/ JavaScript /GSAP", "ingenuty_01": "繰り返しの処理を効率良く記述すること", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "4" },
-    { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "https://github.com/iamkaidzu", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理を効率良く記述すること", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "4" }
+    { "img_pc": "./img/img_003.jpg", "img_sp": "./img/img_004.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_001/", "skill": "HTML / CSS/ JavaScript /GSAP", "ingenuty_01": "繰り返しの処理を効率良く記述すること", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "14" },
+    { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_002/", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理を効率良く記述すること", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "18" }
   ]
   for (let i = 0; i < items.length; i++) {
     $cont_works.innerHTML += `
       <section>
-        <a href="#" class="works_img">
+        <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="works_img">
           <figure class="fadeIn_img"><img src="${items[i].img_pc}" alt=""></figure>
           <figure class="fadeIn_img"><img src="${items[i].img_sp}" alt=""></figure>
         </a>
         <div class="works_txt">
           <div class="ttl">
             <h1>${items[i].ttl}</h1>
-            <a href="${items[i].link}">${items[i].link}</a>
+            <a href="${items[i].link}" target="_blank" rel="noopener noreferrer">${items[i].link}</a>
           </div>
           <div class="skill">
             <h2>使用したスキル</h2>
@@ -188,6 +182,22 @@ function cont_works() {
   }
 }
 cont_works()
+
+// cont_worksのaタグをhoverしたら
+function works_hover() {
+  const $works_a = document.querySelectorAll('#cont_works section .works_txt .ttl a')
+  for (let i = 0; i < $works_a.length; i++) {
+    $works_a[i].addEventListener('mouseover' , () => {
+      const $works_img =document.querySelectorAll('#cont_works section .works_img')
+      $works_img[i].classList.add('on')
+    })
+    $works_a[i].addEventListener('mouseout' , () => {
+      const $works_img =document.querySelectorAll('#cont_works section .works_img')
+      $works_img[i].classList.remove('on')
+    })
+  }
+}
+works_hover()
 
 /* --------------------------------
 スクロールアニメ関数
