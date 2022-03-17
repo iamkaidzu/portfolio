@@ -944,6 +944,12 @@ portforio_main
   width: 100%;
 }
 
+@media (max-width: 1390px) {
+  #portfolio_main .cont #cont_skill section {
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 1180px) {
   #portfolio_main .cont #cont_skill section {
     padding: 20px;
@@ -1377,24 +1383,24 @@ portforio_main
   transition: 0.3s;
 }
 
-@media (max-width: 600px) {
-  #portfolio_main .cont #cont_works section .works_txt .ttl a {
-    margin-left: 18px;
-  }
-}
-
-@media (max-width: 430px) {
-  #portfolio_main .cont #cont_works section .works_txt .ttl a {
-    display: none;
-  }
-}
-
 #portfolio_main .cont #cont_works section .works_txt .ttl a:hover {
   color: #ccc;
   border-bottom: 1px solid #ccc;
 }
 
-#portfolio_main .cont #cont_works section .works_txt .ttl a::before {
+@media (max-width: 600px) {
+  #portfolio_main .cont #cont_works section .works_txt .ttl a:nth-of-type(1) {
+    margin-left: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  #portfolio_main .cont #cont_works section .works_txt .ttl a:nth-of-type(1) {
+    display: none;
+  }
+}
+
+#portfolio_main .cont #cont_works section .works_txt .ttl a:nth-of-type(1)::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -1404,6 +1410,28 @@ portforio_main
   content: "\f038";
   font-weight: 900;
   transform: rotate(90deg);
+}
+
+#portfolio_main .cont #cont_works section .works_txt .ttl a:nth-of-type(2) {
+  display: none;
+  margin: 0 auto;
+}
+
+#portfolio_main .cont #cont_works section .works_txt .ttl a:nth-of-type(2)::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2px 32px 0 -24px;
+  font-size: 14px;
+  font-family: "Font Awesome 5 Free";
+  content: "\f101";
+  font-weight: 900;
+}
+
+@media (max-width: 430px) {
+  #portfolio_main .cont #cont_works section .works_txt .ttl a:nth-of-type(2) {
+    display: inline-block;
+  }
 }
 
 #portfolio_main .cont #cont_works section .works_txt .skill {

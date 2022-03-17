@@ -115,9 +115,9 @@ concept
 function cont_concept() {
   const $cont_concept = document.getElementById('cont_concept')
   const items = [
-    { "num": "01", "ttl": "丁寧で見やすいコーディング", "txt_01": "無駄なコードを書かず、綺麗なコードを書くことを心がけています。", "txt_02": "0からコーディングするときも、改修を行うことを前提に考えて必要最低限なコードを書くようにしています。", "img": "./img/img_001-01.JPG" },
-    { "num": "02", "ttl": "HTMLを汚さない", "txt_01": "HTMLに余計な要素を入れないようにしています。", "txt_02": "CSSの擬似要素等で代用できる部分はなるべくそれで補い、HTMLを汚さないようにしています。", "img": "./img/img_001-02.JPG" },
-    { "num": "03", "ttl": "UIを意識したアニメーション", "txt_01": "「使いやすいけれど面白い。」そんなページを目指してアニメーションを実装します。", "txt_02": "アニメーションを駆使してレイアウトに更なる「価値」を付与することがフロントエンドエンジニアの使命と考えます。", "img": "./img/img_001-03.JPG" }
+    { "num": "01", "ttl": "丁寧で見やすいコーディング", "txt_01": "無駄なコードを書かず、綺麗なコードを書くことを心がけています。", "txt_02": "0からコーディングするときも、改修を行うことを念頭に置いて必要最低限なコードで書くようにしています。", "img": "./img/img_001-01.jpg" },
+    { "num": "02", "ttl": "HTMLを汚さない", "txt_01": "HTMLに余計な要素を入れないようにしています。", "txt_02": "CSSやJavaScript等で代用できる部分はなるべくそれで補い、HTMLを汚さないようにしています。", "img": "./img/img_001-02.jpg" },
+    { "num": "03", "ttl": "スキルアップに貪欲に", "txt_01": "日々、技術がアップデートされていくフロントエンドの世界。", "txt_02": "持っている知識を最大限活かしつつも、それに執着せず新しい技術を積極的に習得することで自らのスキルを日々アップデートしています。", "img": "./img/img_001-03.jpg" }
   ]
   for (let i = 0; i < items.length; i++) {
     $cont_concept.innerHTML += `
@@ -129,7 +129,7 @@ function cont_concept() {
           <div class="txt">
             <p>
               ${items[i].txt_01}<br>
-              ${items[i].txt_02}
+              ${items[i].txt_02}<br>
             </p>
           </div>
         </div>
@@ -162,6 +162,7 @@ function cont_works() {
           <div class="ttl">
             <h1>${items[i].ttl}</h1>
             <a href="${items[i].link}" target="_blank" rel="noopener noreferrer">${items[i].link}</a>
+            <a href="${items[i].link}" target="_blank" rel="noopener noreferrer">View the site</a>
           </div>
           <div class="skill">
             <h2>使用したスキル</h2>
@@ -200,7 +201,7 @@ function works_hover() {
 works_hover()
 
 /* --------------------------------
-スクロールアニメ関数
+スクロールアニメーション関数
 ------------------------------------ */
 /* 
 * 第１引数：classの指定（ドットを必ず付けること）

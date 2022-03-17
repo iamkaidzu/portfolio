@@ -842,3 +842,34 @@ footer{
     }
   }
 }
+//フェードインアニメーション
+/*----------------------  
+fadeInを付与する
+----------------------*/
+.fadeIn {
+  opacity: 0 !important;
+  transition: 1s;
+  transform: translateY(300px) !important;
+}
+.fadeIn.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.fadeIn_img {
+  opacity: 0 !important;
+  transition: 1.5s;
+  transform: translateY(400px) !important;
+}
+.fadeIn_img.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.fadeIn_txt {
+  opacity: 0 !important;
+  transition: 1.5s;
+  transform: translateY(600px) !important;
+}
+.fadeIn_txt.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

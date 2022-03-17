@@ -759,6 +759,9 @@ portforio_main
         padding: 30px;
         max-width: 280px;
         width: 100%;
+        @media (max-width: 1390px) {
+          margin: 0 auto;
+        }
         @media (max-width: 1180px) {
           padding: 20px;
           max-width: 250px;
@@ -1072,26 +1075,47 @@ portforio_main
               color: #000;
               border-bottom: 1px solid #111;
               transition: 0.3s;
-              @media (max-width: 600px) {
-                margin-left: 18px;
-              }
-              @media (max-width: 430px) {
-                display: none;
-              }
               &:hover {
                 color: #ccc;
                 border-bottom: 1px solid #ccc;
               }
-              &::before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                margin: 3px 32px 0 -24px;
-                font-size: 14px;
-                font-family: "Font Awesome 5 Free";
-                content: "\f038";
-                font-weight: 900;
-                transform: rotate(90deg);
+              // 430pxまで表示
+              &:nth-of-type(1){
+                @media (max-width: 600px) {
+                  margin-left: 18px;
+                }
+                @media (max-width: 430px) {
+                  display: none;
+                }
+                &::before {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  margin: 3px 32px 0 -24px;
+                  font-size: 14px;
+                  font-family: "Font Awesome 5 Free";
+                  content: "\f038";
+                  font-weight: 900;
+                  transform: rotate(90deg);
+                }
+              }
+              // 430pxから表示
+              &:nth-of-type(2){
+                display: none;
+                margin: 0 auto;
+                &::before {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  margin: 2px 32px 0 -24px;
+                  font-size: 14px;
+                  font-family: "Font Awesome 5 Free";
+                  content: "\f101";
+                  font-weight: 900;
+                }
+                @media (max-width: 430px) {
+                  display: inline-block;
+                }
               }
             }
           }

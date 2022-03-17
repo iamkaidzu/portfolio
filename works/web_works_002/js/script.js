@@ -51,12 +51,12 @@ function cont_person() {
   for (let i = 0; i < items.length; i++) {
     $frame.innerHTML += `
     <section>
-      <a href="#" class="person_ttl">
+      <a href="#" class="person_ttl fadeIn_txt">
         <h2>${items[i].num}</h2>
         <h3>${items[i].ttl_01}<br>${items[i].ttl_02}</h3>
         <p>${items[i].name}<br>${items[i].ocp}<br>${items[i].year}年入社</p>
       </a>
-      <a href="#" class="person_img">
+      <a href="#" class="person_img fadeIn_img">
         <figure><img src="${items[i].img}"></figure>
       </a>
     </section>
@@ -80,10 +80,10 @@ function cont_project() {
   for (let i = 0; i < items.length; i++) {
     $frame.innerHTML += `
     <section>
-      <a href="#" class="project_img">
+      <a href="#" class="project_img fadeIn_img">
         <figure><img src="${items[i].img}"></figure>
       </a>
-      <a href="#" class="project_ttl">
+      <a href="#" class="project_ttl fadeIn_txt">
         <h2>${items[i].num}</h2>
         <div class="project_ttl_txt">
           <h3>${items[i].ttl_01}</h3>
@@ -96,3 +96,37 @@ function cont_project() {
   }
 }
 cont_project()
+
+/* --------------------------------
+スクロールアニメーション関数
+------------------------------------ */
+/* 
+* 第１引数：classの指定（ドットを必ず付けること）
+* 第２引数：発火してから付与されるclassの指定
+* 第３引数：発火タイミング（下から何ピクセルか？）
+*/
+const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "600") => {
+  const $fadeIn = document.querySelectorAll($class)
+  if ($fadeIn) {
+    window.addEventListener('scroll', () => {
+      // スクロール量を取得
+      let scrollY = window.scrollY;
+      // ウィンドウの高さを取得
+      let $win_h = document.documentElement.clientHeight;
+      for (let a = 0; a < $fadeIn.length; a++) {
+        // 各要素の位置を取得
+        let offsetTop = $fadeIn[a].offsetTop
+        // 要素がウィンドウの高さ-$pxの位置に来たらclassを付与する
+        if (scrollY + $win_h - $px > offsetTop) {
+          $fadeIn[a].classList.add($on_class)
+        } else {
+          $fadeIn[a].classList.remove($on_class)
+        }
+      }
+    })
+  }
+  return
+}
+Scroll_Anime()
+Scroll_Anime('.fadeIn_img', 'true', '650')
+Scroll_Anime('.fadeIn_txt', 'true', '650')
