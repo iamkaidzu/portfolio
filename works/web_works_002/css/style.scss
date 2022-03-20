@@ -4,6 +4,58 @@ works_02
 body{
   font-family: 'Poppins', sans-serif;
 }
+
+/*------------  
+ローディング画面
+------------*/
+/*------------  
+ローディング画面
+------------*/
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    content: "";
+    height: 100px;
+    width: 100px;
+    border: 1px solid #111;
+    border-radius: 50%;
+    border-right: 1px solid rgba(#333, 0.2);
+    border-top: 1px solid rgba(#666, 0.2);
+    animation: loader 0.7s linear infinite;
+  }
+  h1{
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#loader.on {
+  transform: scale(10);
+  visibility: hidden;
+  opacity: 0;
+}
 /*------------  
 メインヘッダー
 ------------*/
@@ -18,7 +70,6 @@ body{
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  // opacity: .2;
   @media (max-width: 800px) {
     flex-wrap: wrap;
     .logo{
@@ -293,10 +344,11 @@ body{
     opacity: 1;
   }
 }
+
 /*------------  
 コンテンツ
 ------------*/
-#wrapper_main {
+#works_main {
   margin: 0 auto;
   width: 100%;
   /*------------  
@@ -485,9 +537,45 @@ body{
               height: 5px;
               display: block;
               background: #111;
-              @media (max-width: 600px) {
-                width: 30%;
-                height: 4px;
+              /*線の動き 永遠にループ*/
+              animation: pathmove 1.7s ease-in-out infinite;
+              opacity: 0;
+              @media (max-width: 500px) {
+                width: 31%;
+                height: 3px;
+              }
+              @media (max-width: 500px) {
+                width: 29%;
+                height: 2px;
+              }
+            }
+            /*高さ・位置・透過が変化して線が上から下に動く*/
+            @keyframes pathmove {
+              0% {
+                width: 0;
+                bottom: 0;
+                opacity: 0;
+              }
+              30% {
+                width: 40px;
+                opacity: 1;
+                @media (max-width: 500px) {
+                  width: 19px;
+                }
+                @media (max-width: 450px) {
+                  width: 17px;
+                }
+              }
+              100% {
+                width: 0;
+                left: 41%;
+                opacity: 0;
+                @media (max-width: 500px) {
+                  left: 30%;
+                }
+                @media (max-width: 450px) {
+                  left: 25%;
+                }
               }
             }
             h2 {
@@ -818,6 +906,9 @@ body{
     }
   }
 }
+#works_main.on {
+  opacity: 1;
+}
 /*------------
 footer
 ------------*/
@@ -848,8 +939,8 @@ fadeInを付与する
 ----------------------*/
 .fadeIn {
   opacity: 0 !important;
-  transition: 1s;
-  transform: translateY(300px) !important;
+  transition: 1.2s;
+  transform: translateY(100px) !important;
 }
 .fadeIn.true {
   opacity: 1 !important;
@@ -858,7 +949,10 @@ fadeInを付与する
 .fadeIn_img {
   opacity: 0 !important;
   transition: 1.5s;
-  transform: translateY(400px) !important;
+  transform: translateY(200px) !important;
+  @media (max-width: 450px){
+    transform: translateY(80px) !important;
+  }
 }
 .fadeIn_img.true {
   opacity: 1 !important;
@@ -866,8 +960,11 @@ fadeInを付与する
 }
 .fadeIn_txt {
   opacity: 0 !important;
-  transition: 1.5s;
-  transform: translateY(600px) !important;
+  transition: 1.7s;
+  transform: translateY(200px) !important;
+  @media (max-width: 450px){
+    transform: translateY(80px) !important;
+  }
 }
 .fadeIn_txt.true {
   opacity: 1 !important;

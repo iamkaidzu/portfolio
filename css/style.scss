@@ -502,7 +502,7 @@ portforio_main
   /*------------
   FV
   ------------*/
-  #first_view_pc {
+  #first_view {
     position: sticky;
     top: 0;
     width: 100%;
@@ -1199,7 +1199,6 @@ portforio_main
 #portfolio_main.on {
   opacity: 1;
 }
-
 //アニメーション
 /*----------------------  
 fadeInを付与する

@@ -1,6 +1,18 @@
 // HTMLの内容も記載
 'use strict'
 /*------------
+loader
+------------*/
+function loading() {
+  const $loader = document.getElementById('loader')
+  const $works_main = document.getElementById('works_main')
+  window.addEventListener('load', () => {
+    $loader.classList.add('on')
+    $works_main.classList.add('on')
+  })
+}
+loading()
+/*------------
 hum_btn
 ------------*/
 function hum_btn() {
@@ -47,9 +59,9 @@ function cont_philosophy() {
   for (let i = 0; i < items.length; i++) {
     $cont_philosophy.innerHTML += `
       <section>
-        <i class="${items[i].icon}"></i>
-        <h1>${items[i].ttl}</h1>
-        <p>${items[i].txt}</p>
+        <i class="${items[i].icon} fadeIn_txt"></i>
+        <h1 class=" fadeIn_txt">${items[i].ttl}</h1>
+        <p class="fadeIn_txt">${items[i].txt}</p>
       </section>
     `
   }
@@ -73,12 +85,12 @@ function cont_vision(){
       <section>
         <div class="cont_txt">
           <div class="in">
-            <h1>${items[i].ttl}</h1>
-            <p>${items[i].txt}</p>
-            <a class="btn" href="#"><i class="${items[i].icon}"></i></a>
+            <h1 class="fadeIn_txt">${items[i].ttl}</h1>
+            <p class="fadeIn_txt">${items[i].txt}</p>
+            <a class="btn fadeIn_txt" href="#"><i class="${items[i].icon} fadeIn_txt"></i></a>
           </div>
         </div>
-        <div class="cont_img">
+        <div class="cont_img fadeIn_img">
           <figure><img src="${items[i].img}"></figure>
         </div>
       </section>
@@ -94,29 +106,29 @@ function cont_faq() {
   const $faq_list = document.querySelector('#cont_faq dl')
   const lists = [
     {
-      "q": "How long does it take from order to delivery?",
+      "q": "How long does it take from order to delivery ?",
       "a": "It takes about 2 to 3 days."
     },
     {
-      "q": "How long does it take from order to delivery?",
+      "q": "How long does it take from order to delivery ?",
       "a": "It takes about 2 to 3 days."
     },
     {
-      "q": "How long does it take from order to delivery?",
+      "q": "How long does it take from order to delivery ?",
       "a": "It takes about 2 to 3 days."
     },
     {
-      "q": "How long does it take from order to delivery?",
+      "q": "How long does it take from order to delivery ?",
       "a": "It takes about 2 to 3 days."
     },
     {
-      "q": "How long does it take from order to delivery?",
+      "q": "How long does it take from order to delivery ?",
       "a": "It takes about 2 to 3 days."
     }
   ]
   for (let i = 0; i < lists.length; i++) {
     $faq_list.innerHTML += `
-      <dt>${lists[i].q}</dt>
+      <dt class="fadeIn_faq">${lists[i].q}</dt>
       <dd>${lists[i].a}</dd>
     `
   }
@@ -130,3 +142,38 @@ function cont_faq() {
   }
 }
 cont_faq()
+
+/* --------------------------------
+スクロールアニメーション関数
+------------------------------------ */
+/* 
+* 第１引数：classの指定（ドットを必ず付けること）
+* 第２引数：発火してから付与されるclassの指定
+* 第３引数：発火タイミング（下から何ピクセルか？）
+*/
+const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "200") => {
+  const $fadeIn = document.querySelectorAll($class)
+  if ($fadeIn) {
+    window.addEventListener('scroll', () => {
+      // スクロール量を取得
+      let scrollY = window.scrollY;
+      // ウィンドウの高さを取得
+      let $win_h = document.documentElement.clientHeight;
+      for (let a = 0; a < $fadeIn.length; a++) {
+        // 各要素の位置を取得
+        let offsetTop = $fadeIn[a].offsetTop
+        // 要素がウィンドウの高さ-$pxの位置に来たらclassを付与する
+        if (scrollY + $win_h - $px > offsetTop) {
+          $fadeIn[a].classList.add($on_class)
+        } else {
+          $fadeIn[a].classList.remove($on_class)
+        }
+      }
+    })
+  }
+  return
+}
+Scroll_Anime()
+Scroll_Anime('.fadeIn_img', 'true', '200')
+Scroll_Anime('.fadeIn_txt', 'true', '200')
+Scroll_Anime('.fadeIn_faq', 'true', '50')

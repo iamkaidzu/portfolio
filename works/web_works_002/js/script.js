@@ -1,6 +1,18 @@
 // HTMLの内容も記載
 'use strict'
 /*------------
+loader
+------------*/
+function loading() {
+  const $loader = document.getElementById('loader')
+  const $works_main = document.getElementById('works_main')
+  window.addEventListener('load', () => {
+    $loader.classList.add('on')
+    $works_main.classList.add('on')
+  })
+}
+loading()
+/*------------
 hum_btn hum_nav
 ------------*/
 function hum_menu() {
@@ -50,7 +62,7 @@ function cont_person() {
   ]
   for (let i = 0; i < items.length; i++) {
     $frame.innerHTML += `
-    <section>
+    <section class="fadeIn">
       <a href="#" class="person_ttl fadeIn_txt">
         <h2>${items[i].num}</h2>
         <h3>${items[i].ttl_01}<br>${items[i].ttl_02}</h3>
@@ -79,13 +91,13 @@ function cont_project() {
   ]
   for (let i = 0; i < items.length; i++) {
     $frame.innerHTML += `
-    <section>
+    <section class="fadeIn">
       <a href="#" class="project_img fadeIn_img">
         <figure><img src="${items[i].img}"></figure>
       </a>
-      <a href="#" class="project_ttl fadeIn_txt">
-        <h2>${items[i].num}</h2>
-        <div class="project_ttl_txt">
+      <a href="#" class="project_ttl">
+        <h2 class="fadeIn_txt">${items[i].num}</h2>
+        <div class="project_ttl_txt fadeIn_txt">
           <h3>${items[i].ttl_01}</h3>
           <p>${items[i].pjt}</p>
           <p>${items[i].com}</p>
@@ -105,7 +117,7 @@ cont_project()
 * 第２引数：発火してから付与されるclassの指定
 * 第３引数：発火タイミング（下から何ピクセルか？）
 */
-const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "600") => {
+const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "200") => {
   const $fadeIn = document.querySelectorAll($class)
   if ($fadeIn) {
     window.addEventListener('scroll', () => {
@@ -128,5 +140,5 @@ const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "600") => {
   return
 }
 Scroll_Anime()
-Scroll_Anime('.fadeIn_img', 'true', '650')
-Scroll_Anime('.fadeIn_txt', 'true', '650')
+Scroll_Anime('.fadeIn_img', 'true', '90')
+Scroll_Anime('.fadeIn_txt', 'true', '90')

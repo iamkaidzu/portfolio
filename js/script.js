@@ -64,7 +64,7 @@ function cont_profile() {
     { "q": "Birth", "a": "1995 / 10 /11" },
     { "q": "Sex", "a": "Man" },
     { "q": "From", "a": "Tokyo Akishima City" },
-    { "q": "Comment", "a": "前職の経理部にてRPAを実装した経験から、プログラミングに興味を持ちました。<br>常に実践を意識したコーディングを心がけて勉強してきました。<br>改修などの際に見やすいよう余計なコードは書かずにクオリティの高い作品を作ることをモットーとしています。" },
+    { "q": "Comment", "a": "前職の経理部にてRPAを実装した経験から、プログラミングに興味を持ちました。<br>未経験ながらも即戦力になれるよう、「現場ではどうしているんだろう」を常に考えながらコーディングをしてきました。現状維持ではなく、成長を意識することで新しい知識を蓄えコーディング力を鍛えました。<br>改修などの際に見やすいよう余計なコードは書かずにクオリティの高い作品を作ることをモットーとしています。" },
   ]
   for (let i = 0; i < items.length; i++) {
     $profile_txt.innerHTML += `
@@ -184,6 +184,9 @@ function cont_works() {
 }
 cont_works()
 
+/*----------------------
+hoverアニメーション
+----------------------*/
 // cont_worksのaタグをhoverしたら
 function works_hover() {
   const $works_a = document.querySelectorAll('#cont_works section .works_txt .ttl a')
@@ -200,13 +203,13 @@ function works_hover() {
 }
 works_hover()
 
-/* --------------------------------
-スクロールアニメーション関数
------------------------------------- */
+/*----------------------
+スクロールアニメーション01
+----------------------*/
 /* 
-* 第１引数：classの指定（ドットを必ず付けること）
-* 第２引数：発火してから付与されるclassの指定
-* 第３引数：発火タイミング（下から何ピクセルか？）
+第１引数：classの指定（ドットを必ず付けること）
+第２引数：発火してから付与されるclassの指定
+第３引数：発火タイミング（下から何ピクセルか？）
 */
 const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "600") => {
   const $fadeIn = document.querySelectorAll($class)
@@ -232,3 +235,34 @@ const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "600") => {
 }
 Scroll_Anime()
 Scroll_Anime('.fadeIn_img', 'true', '650')
+
+
+/*-------------------------------
+スクロールアニメーション hdr_right部分
+-------------------------------*/
+{
+  const $home = document.getElementById('first_view')
+  const $profile = document.getElementById('cont_profile')
+  const $skill = document.getElementById('cont_skill')
+  const $concept = document.getElementById('cont_concept')
+  const $works = document.getElementById('cont_works')
+
+  const $win_height = document.documentElement.clientHeight
+  const $win_height_2 = $win_height / 2
+  const $profile_top = $profile.offsetTop
+  const $profile_height = $profile.clientHeight
+  
+  console.log($profile_top)
+  console.log($profile_height)
+  console.log($win_height)
+  window.addEventListener('scroll', () => {
+    const $area = window.scrollY - $profile_top
+    console.log($profile_height)
+    if ($area > $win_height_2) {
+      console.log('kai')
+    }
+    if ($profile_height > $win_height) {
+      console.log('kousuke')
+    }
+  })
+}

@@ -6,14 +6,13 @@
   <meta charset="UTF-8">
   <title>I am Kaidzu</title>
   <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Open+Sans:wght@300;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Open+Sans:wght@300;600&display=swap"rel="stylesheet">
 </head>
 
 <body>
   <!------------------------------------
-    ローディングアニメーション
-    -------------------------------------->
+  ローディングアニメーション
+  -------------------------------------->
   <div id="loader">
     <div class="spinner">
       <div class="dot1"></div>
@@ -21,8 +20,8 @@
     </div>
   </div>
   <!------------------------------------
-    メインヘッダー
-    -------------------------------------->
+  メインヘッダー
+  -------------------------------------->
   <header id="hdr_main">
     <!-- top_hdr -->
     <div class="top_hdr"></div>
@@ -76,8 +75,11 @@
     <!------------------------------------
     ファーストビュー
     -------------------------------------->
-    <article id="first_view_pc">
+    <div id="first_view_target"></div>
+    <article id="first_view">
+      <!-- PC版 -->
       <figure><img src="./img/img_001.JPG" alt="#"></figure>
+      <!-- SP版 -->
       <figure><img src="./img/img_002.JPG" alt="#"></figure>
     </article>
     <article class="cont">
@@ -88,7 +90,7 @@
       <article id="cont_profile">
         <section>
           <div class="profile_img">
-            <figure><img src="./img/img_007.JPG" alt=""></figure>
+            <figure class="fadeIn_img"><img src="./img/img_007.JPG" alt=""></figure>
             <h1>@iamKaidzu</h1>
             <div class="btn"><i class="fas fa-plus"></i></div>
           </div>
@@ -113,7 +115,9 @@
     </article>
   </main>
 
-  <!-- JSファイル読み込み -->
+  <!-- JQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- HTML / JS -->
   <script src="./js/script.js"></script>
 </body>
 
