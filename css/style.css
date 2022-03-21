@@ -1534,8 +1534,8 @@ fadeInを付与する
 ----------------------*/
 .fadeIn {
   opacity: 0 !important;
-  transition: 1s;
   transform: translateY(300px) !important;
+  transition: 1s;
 }
 
 .fadeIn.true {
@@ -1545,11 +1545,22 @@ fadeInを付与する
 
 .fadeIn_img {
   opacity: 0 !important;
-  transition: 1.5s;
   transform: translateY(400px) !important;
+  transition: 1.5s;
 }
 
 .fadeIn_img.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fadeIn_txt {
+  opacity: 0 !important;
+  transform: translateY(400px) !important;
+  transition: 1.7s;
+}
+
+.fadeIn_txt.true {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }

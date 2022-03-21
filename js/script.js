@@ -19,7 +19,7 @@ loading()
 function scroll_ttl() {
   const $cont_ttl = document.getElementById('cont_ttl')
   // それぞれのcontのエレメントとタイトルを取得
-  const $items = [
+  const items = [
     {"cont":"fv","ttl":"HOME"},
     {"cont":"profile","ttl":"PROFILE"},
     {"cont":"skill","ttl":"SKILL"},
@@ -29,15 +29,15 @@ function scroll_ttl() {
   window.addEventListener('scroll', () => {
     const win_h = document.documentElement.clientHeight //ウィンドウの高さ取得
     const win_h_2 = win_h / 2 //ウィンドウの高さ÷2
-    for (let i = 0; i < $items.length; i++) {
-      let $areas = document.getElementById(`cont_${$items[i].cont}`)
+    for (let i = 0; i < items.length; i++) {
+      let $areas = document.getElementById(`cont_${items[i].cont}`)
       let $cont_top = $areas.offsetTop
       let $area = window.scrollY - $cont_top //スクロール量 - コンテンツ(上から何pxか)
       if ($area > win_h_2) {
-        $cont_ttl.innerText = `${$items[i].ttl}`
+        $cont_ttl.innerText = `${items[i].ttl}`
       }
       if (window.scrollY < win_h_2) {
-        $cont_ttl.innerText = `${$items[0].ttl}`
+        $cont_ttl.innerText = `${items[0].ttl}`
       }
     }
   })
@@ -133,7 +133,7 @@ function cont_skill() {
           <figure class="fadeIn_img"><img src="${items[i].img}" alt=""></figure>
         </div>
         <div class="skill_txt">
-          <h1>${items[i].ttl}</h1>
+          <h1 class="fadeIn_txt">${items[i].ttl}</h1>
         </div>
       </section>
     `
@@ -154,12 +154,12 @@ function cont_concept() {
   for (let i = 0; i < items.length; i++) {
     $cont_concept.innerHTML += `
       <section>
-        <div class="concept_txt">
+        <div class="concept_txt fadeIn">
           <div class="ttl">
-            <h1>${items[i].num}<span>${items[i].ttl}</span></h1>
+            <h1 class="fadeIn_txt">${items[i].num}<span class="fadeIn_txt">${items[i].ttl}</span></h1>
           </div>
-          <div class="txt">
-            <p>
+          <div class="txt fadeIn_txt">
+            <p class="fadeIn_txt">
               ${items[i].txt_01}<br>
               ${items[i].txt_02}<br>
             </p>
@@ -180,8 +180,8 @@ works
 function cont_works() {
   const $cont_works = document.getElementById('cont_works')
   const items = [
-    { "img_pc": "./img/img_003.jpg", "img_sp": "./img/img_004.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_001/", "skill": "HTML / CSS/ JavaScript /GSAP", "ingenuty_01": "繰り返しの処理を効率良く記述すること", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "14" },
-    { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_002/", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理を効率良く記述すること", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "18" }
+    { "img_pc": "./img/img_003.jpg", "img_sp": "./img/img_004.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_001/", "skill": "HTML / CSS/ JavaScript / GSAP", "ingenuty_01": "GSAPを使ったアニメーション", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "16" },
+    { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_002/", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理をJSで効率良く記述すること", "ingenuty_02": "SP時のアニメーション制御", "times": "18" }
   ]
   for (let i = 0; i < items.length; i++) {
     $cont_works.innerHTML += `
@@ -191,21 +191,21 @@ function cont_works() {
           <figure class="fadeIn_img"><img src="${items[i].img_sp}" alt=""></figure>
         </a>
         <div class="works_txt">
-          <div class="ttl">
+          <div class="ttl fadeIn_txt">
             <h1>${items[i].ttl}</h1>
-            <a href="${items[i].link}" target="_blank" rel="noopener noreferrer">${items[i].link}</a>
-            <a href="${items[i].link}" target="_blank" rel="noopener noreferrer">View the site</a>
+            <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="pc_works_a">${items[i].link}</a>
+            <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="sp_works_a">View the site</a>
           </div>
-          <div class="skill">
+          <div class="skill fadeIn_txt">
             <h2>使用したスキル</h2>
             <p>${items[i].skill}</p>
           </div>
-          <div class="ingenuity">
+          <div class="ingenuity fadeIn_txt">
             <h2>工夫した点</h2>
             <p>${items[i].ingenuty_01}</p>
             <p>${items[i].ingenuty_02}</p>
           </div>
-          <div class="time_required">
+          <div class="time_required fadeIn_txt">
             <h2>所用時間</h2>
             <p>${items[i].times}時間</p>
           </div>
@@ -221,15 +221,25 @@ hoverアニメーション
 ----------------------*/
 // cont_worksのaタグをhoverしたら
 function works_hover() {
-  const $works_a = document.querySelectorAll('#cont_works section .works_txt .ttl a')
-  for (let i = 0; i < $works_a.length; i++) {
-    $works_a[i].addEventListener('mouseover' , () => {
-      const $works_img =document.querySelectorAll('#cont_works section .works_img')
+  const $pc_works_a = document.querySelectorAll('#cont_works section .works_txt .ttl .pc_works_a')
+  const $sp_works_a = document.querySelectorAll('#cont_works section .works_txt .ttl .sp_works_a')
+  const $works_img =document.querySelectorAll('#cont_works section .works_img')
+  // PC時
+  for (let i = 0; i < $pc_works_a.length; i++) {
+    $pc_works_a[i].addEventListener('mouseover' , () => {
       $works_img[i].classList.add('on')
+      $pc_works_a[i].addEventListener('mouseout' , () => {
+        $works_img[i].classList.remove('on')
+      })
     })
-    $works_a[i].addEventListener('mouseout' , () => {
-      const $works_img =document.querySelectorAll('#cont_works section .works_img')
-      $works_img[i].classList.remove('on')
+  }
+  // SP時
+  for (let i = 0; i < $sp_works_a.length; i++) {
+    $sp_works_a[i].addEventListener('mouseover' , () => {
+      $works_img[i].classList.add('on')
+      $sp_works_a[i].addEventListener('mouseout' , () => {
+        $works_img[i].classList.remove('on')
+      })
     })
   }
 }
@@ -266,4 +276,5 @@ const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "600") => {
   return
 }
 Scroll_Anime()
-Scroll_Anime('.fadeIn_img', 'true', '650')
+Scroll_Anime('.fadeIn_img', 'true', '600')
+Scroll_Anime('.fadeIn_txt', 'true', '600')
