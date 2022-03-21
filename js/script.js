@@ -12,6 +12,38 @@ function loading() {
   })
 }
 loading()
+
+/*-------------------------------
+スクロールアニメーション hdr_right部分
+-------------------------------*/
+function scroll_ttl() {
+  const $cont_ttl = document.getElementById('cont_ttl')
+  // それぞれのcontのエレメントとタイトルを取得
+  const $items = [
+    {"cont":"fv","ttl":"HOME"},
+    {"cont":"profile","ttl":"PROFILE"},
+    {"cont":"skill","ttl":"SKILL"},
+    {"cont":"concept","ttl":"CONCEPT"},
+    {"cont":"works","ttl":"WORKS"}
+  ]
+  window.addEventListener('scroll', () => {
+    const win_h = document.documentElement.clientHeight //ウィンドウの高さ取得
+    const win_h_2 = win_h / 2 //ウィンドウの高さ÷2
+    for (let i = 0; i < $items.length; i++) {
+      let $areas = document.getElementById(`cont_${$items[i].cont}`)
+      let $cont_top = $areas.offsetTop
+      let $area = window.scrollY - $cont_top //スクロール量 - コンテンツ(上から何pxか)
+      if ($area > win_h_2) {
+        $cont_ttl.innerText = `${$items[i].ttl}`
+      }
+      if (window.scrollY < win_h_2) {
+        $cont_ttl.innerText = `${$items[0].ttl}`
+      }
+    }
+  })
+}
+scroll_ttl()
+
 /*------------
 hum_nav
 ------------*/
@@ -235,34 +267,3 @@ const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "600") => {
 }
 Scroll_Anime()
 Scroll_Anime('.fadeIn_img', 'true', '650')
-
-
-/*-------------------------------
-スクロールアニメーション hdr_right部分
--------------------------------*/
-{
-  const $home = document.getElementById('first_view')
-  const $profile = document.getElementById('cont_profile')
-  const $skill = document.getElementById('cont_skill')
-  const $concept = document.getElementById('cont_concept')
-  const $works = document.getElementById('cont_works')
-
-  const $win_height = document.documentElement.clientHeight
-  const $win_height_2 = $win_height / 2
-  const $profile_top = $profile.offsetTop
-  const $profile_height = $profile.clientHeight
-  
-  console.log($profile_top)
-  console.log($profile_height)
-  console.log($win_height)
-  window.addEventListener('scroll', () => {
-    const $area = window.scrollY - $profile_top
-    console.log($profile_height)
-    if ($area > $win_height_2) {
-      console.log('kai')
-    }
-    if ($profile_height > $win_height) {
-      console.log('kousuke')
-    }
-  })
-}

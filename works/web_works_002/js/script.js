@@ -82,12 +82,12 @@ cont_project
 function cont_project() {
   const $frame = document.querySelector('#works_project .cont_project .frame')
   const items = [
-    { "num": "01", "ttl_01": "当たり前に噛み付く", "pjt": "iamKaidzu", "com": "DIRECTOR", "img": "https://images.unsplash.com/photo-1598343661787-2c74b56d87f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1768&q=80" },
-    { "num": "02", "ttl_01": "新たな日常に噛み付く", "pjt": "iamKaidzu", "com": "PRODUCER", "img": "https://images.unsplash.com/photo-1586014718688-58c5c6f6c13d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" },
-    { "num": "03", "ttl_01": "守備範囲に噛み付く", "pjt": "iamKaidzu", "com": "DESIGNER", "img": "https://images.unsplash.com/photo-1585022762780-b316ed8a5964?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=898&q=80" },
-    { "num": "04", "ttl_01": "境界線に噛み付く", "pjt": "iamKaidzu", "com": "ENGINEER", "img": "https://images.unsplash.com/photo-1585049990146-8a3d5b64e5b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" },
-    { "num": "05", "ttl_01": "現状維持に噛み付く", "pjt": "iamKaidzu", "com": "DIRECTOR", "img": "https://images.unsplash.com/photo-1633093230485-b90b93ae9f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" },
-    { "num": "06", "ttl_01": "明日に噛み付く", "pjt": "iamKaidzu", "com": "DIRECTOR", "img":"https://images.unsplash.com/photo-1615050989483-6f530354d759?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1848&q=80"}
+    { "num": "01", "ttl_01": "当たり前に噛み付く。", "pjt": "iamKaidzu", "com": "DIRECTOR", "img": "https://images.unsplash.com/photo-1598343661787-2c74b56d87f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1768&q=80" },
+    { "num": "02", "ttl_01": "新たな日常に噛み付く。", "pjt": "iamKaidzu", "com": "PRODUCER", "img": "https://images.unsplash.com/photo-1586014718688-58c5c6f6c13d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" },
+    { "num": "03", "ttl_01": "守備範囲に噛み付く。", "pjt": "iamKaidzu", "com": "DESIGNER", "img": "https://images.unsplash.com/photo-1585022762780-b316ed8a5964?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=898&q=80" },
+    { "num": "04", "ttl_01": "境界線に噛み付く。", "pjt": "iamKaidzu", "com": "ENGINEER", "img": "https://images.unsplash.com/photo-1585049990146-8a3d5b64e5b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" },
+    { "num": "05", "ttl_01": "現状維持に噛み付く。", "pjt": "iamKaidzu", "com": "DIRECTOR", "img": "https://images.unsplash.com/photo-1633093230485-b90b93ae9f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" },
+    { "num": "06", "ttl_01": "明日に噛み付く。", "pjt": "iamKaidzu", "com": "DIRECTOR", "img":"https://images.unsplash.com/photo-1615050989483-6f530354d759?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1848&q=80"}
   ]
   for (let i = 0; i < items.length; i++) {
     $frame.innerHTML += `

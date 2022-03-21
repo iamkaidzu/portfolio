@@ -598,13 +598,13 @@ portforio_main
   ------------*/
 }
 
-#portfolio_main #first_view {
+#portfolio_main #cont_fv {
   position: sticky;
   top: 0;
   width: 100%;
 }
 
-#portfolio_main #first_view figure {
+#portfolio_main #cont_fv figure {
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -614,18 +614,18 @@ portforio_main
 }
 
 @media (max-width: 769px) {
-  #portfolio_main #first_view figure {
+  #portfolio_main #cont_fv figure {
     display: none;
   }
 }
 
-#portfolio_main #first_view figure::before {
+#portfolio_main #cont_fv figure::before {
   padding-top: 100%;
   content: "";
   display: block;
 }
 
-#portfolio_main #first_view figure img {
+#portfolio_main #cont_fv figure img {
   position: absolute;
   top: 0;
   left: 0;
@@ -634,12 +634,12 @@ portforio_main
   object-fit: cover;
 }
 
-#portfolio_main #first_view figure:nth-of-type(2) {
+#portfolio_main #cont_fv figure:nth-of-type(2) {
   display: none;
 }
 
 @media (max-width: 769px) {
-  #portfolio_main #first_view figure:nth-of-type(2) {
+  #portfolio_main #cont_fv figure:nth-of-type(2) {
     display: block;
   }
 }
