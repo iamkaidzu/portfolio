@@ -148,7 +148,7 @@ function cont_concept() {
   const $cont_concept = document.getElementById('cont_concept')
   const items = [
     { "num": "01", "ttl": "丁寧で見やすいコーディング", "txt_01": "無駄なコードを書かず、綺麗なコードを書くことを心がけています。", "txt_02": "0からコーディングするときも、改修を行うことを念頭に置いて必要最低限なコードで書くようにしています。", "img": "./img/img_001-01.jpg" },
-    { "num": "02", "ttl": "HTMLを汚さない", "txt_01": "HTMLに余計な要素を入れないようにしています。", "txt_02": "CSSやJavaScript等で代用できる部分はなるべくそれで補い、HTMLを汚さないようにしています。", "img": "./img/img_001-02.jpg" },
+    { "num": "02", "ttl": "レスポンシブデザイン", "txt_01": "どんな媒体・画面サイズでも快適に閲覧できるよう、レスポンシブデザインを実装するようにしています。", "txt_02": "主要なブレイクポイントのみならず、画面を縮めていったときに全体のバランスなどを見た上で都度レスポンシブ対応を行うようにしています。", "img": "./img/img_001-02.jpg" },
     { "num": "03", "ttl": "スキルアップに貪欲に", "txt_01": "日々、技術がアップデートされていくフロントエンドの世界。", "txt_02": "持っている知識を最大限活かしつつも、それに執着せず新しい技術を積極的に習得することで自らのスキルを日々アップデートしています。", "img": "./img/img_001-03.jpg" }
   ]
   for (let i = 0; i < items.length; i++) {
@@ -181,7 +181,7 @@ function cont_works() {
   const $cont_works = document.getElementById('cont_works')
   const items = [
     { "img_pc": "./img/img_003.jpg", "img_sp": "./img/img_004.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_001/", "skill": "HTML / CSS/ JavaScript / GSAP", "ingenuty_01": "GSAPを使ったアニメーション", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "16" },
-    { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_002/", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理をJSで効率良く記述すること", "ingenuty_02": "SP時のアニメーション制御", "times": "18" }
+    { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_002/", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理をJSで効率良く記述すること", "ingenuty_02": "SP時のアニメーションが鬱陶しくならないよう制御したこと", "times": "18" }
   ]
   for (let i = 0; i < items.length; i++) {
     $cont_works.innerHTML += `
@@ -190,24 +190,24 @@ function cont_works() {
           <figure class="fadeIn_img"><img src="${items[i].img_pc}" alt=""></figure>
           <figure class="fadeIn_img"><img src="${items[i].img_sp}" alt=""></figure>
         </a>
-        <div class="works_txt">
+        <div class="works_txt fadeIn_txt">
           <div class="ttl fadeIn_txt">
             <h1>${items[i].ttl}</h1>
             <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="pc_works_a">${items[i].link}</a>
             <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="sp_works_a">View the site</a>
           </div>
           <div class="skill fadeIn_txt">
-            <h2>使用したスキル</h2>
-            <p>${items[i].skill}</p>
+            <h2 calss="fadeIn_txt">使用したスキル</h2>
+            <p calss="fadeIn_txt">${items[i].skill}</p>
           </div>
           <div class="ingenuity fadeIn_txt">
-            <h2>工夫した点</h2>
-            <p>${items[i].ingenuty_01}</p>
-            <p>${items[i].ingenuty_02}</p>
+            <h2 calss="fadeIn_txt">工夫した点</h2>
+            <p calss="fadeIn_txt">${items[i].ingenuty_01}</p>
+            <p calss="fadeIn_txt">${items[i].ingenuty_02}</p>
           </div>
           <div class="time_required fadeIn_txt">
-            <h2>所用時間</h2>
-            <p>${items[i].times}時間</p>
+            <h2 class="fadeIn_txt">所用時間</h2>
+            <p class="fadeIn_txt">${items[i].times}時間</p>
           </div>
         </div>
       </section>
