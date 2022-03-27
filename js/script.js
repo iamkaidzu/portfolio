@@ -128,9 +128,9 @@ function cont_skill() {
   ]
   for (let i = 0; i < items.length; i++) {
     $cont_skill.innerHTML += `
-      <section>
+      <section class="fadeIn_img">
         <div class="skill_img">
-          <figure class="fadeIn_img"><img src="${items[i].img}" alt=""></figure>
+          <figure><img src="${items[i].img}" alt=""></figure>
         </div>
         <div class="skill_txt">
           <h1 class="fadeIn_txt">${items[i].ttl}</h1>
