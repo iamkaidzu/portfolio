@@ -99,25 +99,9 @@ body {
 ナビゲーション
 ------------*/
 #hdr_main {
-  /*--top_hdr--*/
   /*--bottom_hdr--*/
   /*--left_hdr--*/
   /*--right_hdr--*/
-}
-
-#hdr_main .top_hdr {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 50px;
-}
-
-@media (max-width: 500px) {
-  #hdr_main .top_hdr {
-    height: 40px;
-  }
 }
 
 #hdr_main .bottom_hdr {
@@ -761,12 +745,12 @@ portforio_main
 
 #portfolio_main .cont #cont_profile section .profile_img .btn i {
   margin: 0 auto;
-  border-radius: 50%;
   padding: 20px;
-  font-size: 20px;
   background: #decefd;
   color: #fff;
+  font-size: 20px;
   text-align: center;
+  border-radius: 50%;
   transition: 0.5s;
 }
 
@@ -875,8 +859,8 @@ portforio_main
 #portfolio_main .cont #cont_profile section .profile_txt dl:last-of-type dd {
   max-width: 100%;
   font-size: 16px;
-  letter-spacing: 0.1em;
-  line-height: 1.2em;
+  letter-spacing: 0.12em;
+  line-height: 1.35em;
   text-align: left;
 }
 
@@ -1561,6 +1545,50 @@ fadeInを付与する
 }
 
 .fadeIn_txt.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fadeIn_skill_img {
+  opacity: 0 !important;
+  transform: translateY(400px) !important;
+  transition: 1.5s;
+}
+
+.fadeIn_skill_img.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fadeIn_skill_txt {
+  opacity: 0 !important;
+  transform: translateY(400px) !important;
+  transition: 1.7s;
+}
+
+.fadeIn_skill_txt.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fadeIn_works_img {
+  opacity: 0 !important;
+  transform: translateY(400px) !important;
+  transition: 1.5s;
+}
+
+.fadeIn_works_img.true {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fadeIn_works_txt {
+  opacity: 0 !important;
+  transform: translateY(400px) !important;
+  transition: 1.7s;
+}
+
+.fadeIn_works_txt.true {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }

@@ -14,7 +14,7 @@ function loading() {
 loading()
 
 /*-------------------------------
-スクロールアニメーション hdr_right部分
+スクロールアニメーション hdr_right タイトル部分
 -------------------------------*/
 function scroll_ttl() {
   const $cont_ttl = document.getElementById('cont_ttl')
@@ -96,7 +96,7 @@ function cont_profile() {
     { "q": "Birth", "a": "1995 / 10 /11" },
     { "q": "Sex", "a": "Man" },
     { "q": "From", "a": "Tokyo Akishima City" },
-    { "q": "Comment", "a": "前職の経理部にてRPAを実装した経験から、プログラミングに興味を持ちました。<br>未経験ながらも即戦力になれるよう、「現場ではどうしているんだろう」を常に考えながらコーディングをしてきました。現状維持ではなく、成長を意識することで新しい知識を蓄えコーディング力を鍛えました。<br>改修などの際に見やすいよう余計なコードは書かずにクオリティの高い作品を作ることをモットーとしています。" },
+    { "q": "Will", "a": "RPAツールを使用して業務の自動化を行った経験から「自分が制作したサービスが多くの人に評価される」ことが仕事への意欲に繋がると気づき、フロントエンドエンジニアを志しました。<br>就職後、少しでも早く力になれるよう、自らの引き出しを増やすことを意識して学習に取り組みました。「できること」に執着するのではなく、「できないこと」や「やりたいこと」に対して積極的に挑戦することで出来ることの幅を広げてきました。" },
   ]
   for (let i = 0; i < items.length; i++) {
     $profile_txt.innerHTML += `
@@ -121,19 +121,19 @@ function cont_skill() {
   const items = [
     { "img": "./img/html-css.png", "ttl": "HTML / CSS" },
     { "img": "./img/js.svg", "ttl": "Java Script" },
-    { "img": "./img/adobe-xd.svg", "ttl": "XD" },
     { "img": "./img/sass.svg", "ttl": "Sass" },
+    { "img": "./img/adobe-xd.svg", "ttl": "XD" },
     { "img": "./img/jq.svg", "ttl": "JQuery" },
     { "img": "./img/gsap-greensock.svg", "ttl": "GSAP" }
   ]
   for (let i = 0; i < items.length; i++) {
     $cont_skill.innerHTML += `
-      <section class="fadeIn_img">
-        <div class="skill_img">
+      <section>
+        <div class="skill_img fadeIn_skill_img">
           <figure><img src="${items[i].img}" alt=""></figure>
         </div>
         <div class="skill_txt">
-          <h1 class="fadeIn_txt">${items[i].ttl}</h1>
+          <h1 class=" fadeIn_skill_txt">${items[i].ttl}</h1>
         </div>
       </section>
     `
@@ -180,34 +180,34 @@ works
 function cont_works() {
   const $cont_works = document.getElementById('cont_works')
   const items = [
-    { "img_pc": "./img/img_003.jpg", "img_sp": "./img/img_004.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_001/", "skill": "HTML / CSS/ JavaScript / GSAP", "ingenuty_01": "GSAPを使ったアニメーション", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "16" },
-    { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "http://kskaidu1011.xsrv.jp/demo/works_002/", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理をJSで効率良く記述すること", "ingenuty_02": "SP時のアニメーションが鬱陶しくならないよう制御したこと", "times": "18" }
+    { "img_pc": "./img/img_003.jpg", "img_sp": "./img/img_004.png", "ttl": "Web", "link": "https://kskaidu1011.xsrv.jp/demo/works_001/", "skill": "HTML / CSS/ JavaScript / GSAP", "ingenuty_01": "GSAPを使ったアニメーション", "ingenuty_02": "改修しやすいよう、無駄なコードを書かないこと", "times": "16" },
+    { "img_pc": "./img/img_005.jpg", "img_sp": "./img/img_006.png", "ttl": "Web", "link": "https://kskaidu1011.xsrv.jp/demo/works_002/", "skill": "HTML / CSS/ Javascript", "ingenuty_01": "繰り返しの処理をJSで効率良く記述すること", "ingenuty_02": "SP時のアニメーションが鬱陶しくならないよう制御したこと", "times": "18" }
   ]
   for (let i = 0; i < items.length; i++) {
     $cont_works.innerHTML += `
-      <section>
-        <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="works_img">
-          <figure class="fadeIn_img"><img src="${items[i].img_pc}" alt=""></figure>
-          <figure class="fadeIn_img"><img src="${items[i].img_sp}" alt=""></figure>
+      <section class="fadeIn_works_img">
+        <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="works_img fadeIn_works_img">
+          <figure><img src="${items[i].img_pc}" alt=""></figure>
+          <figure><img src="${items[i].img_sp}" alt=""></figure>
         </a>
-        <div class="works_txt fadeIn_txt">
+        <div class="works_txt fadeIn_works_txt">
           <div class="ttl fadeIn_txt">
             <h1>${items[i].ttl}</h1>
             <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="pc_works_a">${items[i].link}</a>
             <a href="${items[i].link}" target="_blank" rel="noopener noreferrer" class="sp_works_a">View the site</a>
           </div>
-          <div class="skill fadeIn_txt">
-            <h2 calss="fadeIn_txt">使用したスキル</h2>
-            <p calss="fadeIn_txt">${items[i].skill}</p>
+          <div class="skill fadeIn_works_txt">
+            <h2>使用したスキル</h2>
+            <p>${items[i].skill}</p>
           </div>
-          <div class="ingenuity fadeIn_txt">
-            <h2 calss="fadeIn_txt">工夫した点</h2>
-            <p calss="fadeIn_txt">${items[i].ingenuty_01}</p>
-            <p calss="fadeIn_txt">${items[i].ingenuty_02}</p>
+          <div class="ingenuity fadeIn_works_txt">
+            <h2>工夫した点</h2>
+            <p>${items[i].ingenuty_01}</p>
+            <p>${items[i].ingenuty_02}</p>
           </div>
-          <div class="time_required fadeIn_txt">
-            <h2 class="fadeIn_txt">所用時間</h2>
-            <p class="fadeIn_txt">${items[i].times}時間</p>
+          <div class="time_required fadeIn_works_txt">
+            <h2>所用時間</h2>
+            <p>${items[i].times}時間</p>
           </div>
         </div>
       </section>
@@ -278,3 +278,7 @@ const Scroll_Anime = ($class = '.fadeIn', $on_class = 'true', $px = "600") => {
 Scroll_Anime()
 Scroll_Anime('.fadeIn_img', 'true', '600')
 Scroll_Anime('.fadeIn_txt', 'true', '600')
+Scroll_Anime('.fadeIn_skill_img', 'true', '1100')
+Scroll_Anime('.fadeIn_skill_txt', 'true', '1100')
+Scroll_Anime('.fadeIn_works_img', 'true', '3600')
+Scroll_Anime('.fadeIn_works_txt', 'true', '3600')
